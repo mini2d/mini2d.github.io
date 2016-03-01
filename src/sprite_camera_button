@@ -1,0 +1,26 @@
+var game = new mini2d.Game(600, 480, '.container');
+game.load(['assets/tree.png', 'assets/btn.png', 'assets/btn-active.png']);
+game.init = function(){
+    game.world.addSprite(0, game.height - 150, 'assets/tree.png');
+    game.world.addSprite(100, game.height - 150, 'assets/tree.png');
+    game.world.addSprite(200, game.height - 150, 'assets/tree.png');
+    game.world.addSprite(300, game.height - 150, 'assets/tree.png');
+    game.world.addSprite(400, game.height - 150, 'assets/tree.png');
+    game.world.addSprite(500, game.height - 150, 'assets/tree.png');
+
+
+    game.ui.addButton(0, 0, function () {
+        game.camera.move(20, 0);
+    }, 'assets/btn.png', 'assets/btn-active.png').addText('camera right', '15px sans-serif', '#fff');
+    game.ui.addButton(100, 0, function () {
+        game.camera.move(-20, 0);
+    }, 'assets/btn.png', 'assets/btn-active.png').addText('camera left', '15px sans-serif', '#fff');
+    game.ui.addButton(200, 0, function () {
+        game.camera.move(0, -20);
+    }, 'assets/btn.png', 'assets/btn-active.png').addText('camera top', '15px sans-serif', '#fff');
+    game.ui.addButton(300, 0, function () {
+        game.camera.move(0, 20);
+    }, 'assets/btn.png', 'assets/btn-active.png').addText('camera bottom', '15px sans-serif', '#fff');
+};
+game.update = function(){
+}

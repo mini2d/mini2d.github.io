@@ -1,0 +1,43 @@
+var game = window.game = new mini2d.Game(600, 480, '.container');
+game.load(['assets/paddle.png', 'assets/ball.png']);
+game.init = function(){
+    game.paddle1 = game.world.addSprite(50, 50, 'assets/paddle.png');
+    game.paddle1.enableBody();
+    game.paddle1.body.collideWorldBounds();
+    game.paddle1.body.immovable = true;
+    game.paddle1.body.checkCollision = {top: false, bottom: false, left: false, right: true};
+
+    game.paddle2 = game.world.addSprite(500, 50, 'assets/paddle.png');
+    game.paddle2.enableBody();
+    game.paddle2.body.collideWorldBounds();
+    game.paddle2.body.immovable = true;
+    game.paddle2.body.checkCollision = {top: false, bottom: false, left: true, right: false};
+
+    game.ball = game.world.addSprite(game.width / 2, game.height / 2, 'assets/ball.png');
+    game.ball.enableBody();
+    game.ball.body.velocity.x = 250;
+    game.ball.body.velocity.y = 100;
+    game.ball.body.bounce = 1;
+    game.ball.body.collideWorldBounds(function(direction){
+        if(direction == 'left'){
+            game.player2points += 1;
+            game.ball.body.x = game.width / 2;
+            game.ball.body.y = game.height / 2;
+        }
+        else if(direction == 'right'){
+            game.player1points += 1;
+            game.ball.body.x = game.width / 2;
+            game.ball.body.y = game.height / 2;
+        }
+    });
+    game.player1points = 0;
+    game.player2points = 0;
+    game.player1score = game.ui.addText('', 0, 0, '15px sans-serif', '#000');
+    game.player2score = game.ui.addText('', 450, 0, '15px sans-serif', '#000');
+};
+game.update = function(){
+    game.paddle1.body.position.y = game.input.y - game.paddle1.body.height / 2;
+    game.paddle2.body.position.y = game.input.y - game.paddle2.body.height / 2;
+    game.player1score.text = "Player 1 score: " + game.player1points;
+    game.player2score.text = "Player 2 score: " + game.player2points;
+}
