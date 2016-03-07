@@ -52,7 +52,7 @@ var init = function () {
 
 var loadScript = function (name) {
   $.ajax({
-    url: "./src/" + name,
+    url: "./examples/" + name,
     success: function (data) {
       editor.setValue(data);
       editor.gotoLine(0);

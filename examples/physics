@@ -1,0 +1,51 @@
+var game = new mini2d.Game(600, 480);
+var state = game.addState({
+    init: function(){
+        var sprite1 = this.addSprite(50, 50, 'assets/btn.png');
+        sprite1.enableBody();
+        sprite1.body.velocity.y = 200;
+        sprite1.body.bounce = 1;
+        sprite1.body.collideWorldBounds();
+
+        var sprite2 = this.addSprite(50, 150, 'assets/btn-active.png');
+        sprite2.enableBody();
+        sprite2.body.velocity.y = -200;
+        sprite2.body.bounce = 1;
+        sprite2.body.collideWorldBounds();
+
+        var sprite3 = this.addSprite(50, 250, 'assets/logo.png');
+        sprite3.enableBody();
+        sprite3.body.immovable = true;
+
+        var sprite4 = this.addSprite(300, 350, 'assets/btn.png');
+        sprite4.enableBody();
+        sprite4.body.velocity.x = 200;
+        sprite4.body.bounce = 1;
+        sprite4.body.collideWorldBounds();
+
+        var sprite5 = this.addSprite(450, 350, 'assets/btn-active.png');
+        sprite5.enableBody();
+        sprite5.body.velocity.x = -200;
+        sprite5.body.bounce = 1;
+        sprite5.body.collideWorldBounds();
+
+        var sprite6 = this.addSprite(200, 350, 'assets/logo.png');
+        sprite6.enableBody();
+        sprite6.body.immovable = true;
+
+        var sprite7 = this.addSprite(125, 275, 'assets/logo.png');
+        sprite7.enableBody();
+        sprite7.body.immovable = true;
+
+        var sprite8 = this.addSprite(50, 350, 'assets/ball.png');
+        sprite8.enableBody();
+        sprite8.body.velocity.x = -200;
+        sprite8.body.velocity.y = -200;
+        sprite8.body.bounce = 1;
+        sprite8.body.collideWorldBounds();
+
+        this.world.gravity = 0;
+    }
+});
+
+game.load(['assets/logo.png', 'assets/ball.png', 'assets/btn.png', 'assets/btn-active.png'], state);

@@ -1,0 +1,11 @@
+var game = new mini2d.Game(600, 480);
+var state = game.addState({
+    init: function(){
+        var sound = game.addSound('assets/music.mp3');
+        this.addButton(0, 0, function () {
+            sound.play();
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('init iosSound', '15px sans-serif', '#fff');
+    }
+});
+
+game.load(['assets/btn.png', 'assets/btn-active.png', 'assets/music.mp3'], state);

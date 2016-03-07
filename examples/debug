@@ -1,0 +1,13 @@
+var game = new mini2d.Game(600, 480);
+var state = game.addState({
+   init: function(){
+       var self = this;
+       this.debug.add(function () {
+           return 'cursor position x: ' + game.input.x + ' y: ' + game.input.y;
+       });
+       this.debug.add(function () {
+           return 'mouse down: ' + game.input.mouseDown;
+       });
+   }
+});
+state.start();

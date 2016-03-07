@@ -1,0 +1,27 @@
+var game = new mini2d.Game(600, 480);
+var state = game.addState({
+    init: function(){
+        this.addSprite(0, game.height - 150, 'assets/tree.png');
+        this.addSprite(100, game.height - 150, 'assets/tree.png');
+        this.addSprite(200, game.height - 150, 'assets/tree.png');
+        this.addSprite(300, game.height - 150, 'assets/tree.png');
+        this.addSprite(400, game.height - 150, 'assets/tree.png');
+        this.addSprite(500, game.height - 150, 'assets/tree.png');
+
+        var self = this;
+        this.addButton(0, 0, function () {
+            self.camera.move(20, 0);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('camera right', '15px sans-serif', '#fff');
+        this.addButton(100, 0, function () {
+            self.camera.move(-20, 0);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('camera left', '15px sans-serif', '#fff');
+        this.addButton(200, 0, function () {
+            self.camera.move(0, -20);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('camera top', '15px sans-serif', '#fff');
+        this.addButton(300, 0, function () {
+            self.camera.move(0, 20);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('camera bottom', '15px sans-serif', '#fff');
+    }
+});
+
+game.load(['assets/tree.png', 'assets/btn.png', 'assets/btn-active.png'], state);

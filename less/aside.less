@@ -1,0 +1,38 @@
+#example-list {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  min-height: calc(~"100% - 61px");
+  border: 1px solid @color2;
+  padding: 0;
+  margin: 0;
+
+  h3 {
+    background: @color2;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+  }
+  button {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    color: @color1;
+    padding: 5px 25px;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: inherit;
+    &:hover {
+      color: @color2;
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

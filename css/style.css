@@ -1,15 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 header {
   text-align: left;
-  border-bottom: 1px solid #c62556;
-  background: #222;
+  border-bottom: 1px solid #19C6FF;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
 }
 header .brand {
-  color: #eea923;
+  color: #B700FF;
   text-decoration: none;
   font-size: 40px;
   line-height: 40px;
@@ -21,14 +20,14 @@ header .brand {
   display: inline-block;
 }
 header .brand span {
-  color: #c62556;
+  color: #19C6FF;
 }
 header nav {
   float: right;
   font-size: 0;
 }
 header nav a {
-  color: #fff;
+  color: #B700FF;
   font-size: 20px;
   font-weight: lighter;
   text-decoration: none;
@@ -40,7 +39,7 @@ header nav a > ul {
   display: none;
 }
 header nav a:hover {
-  color: #c62556;
+  color: #19C6FF;
 }
 header nav a:hover > ul {
   display: block;
@@ -52,17 +51,17 @@ header nav a:hover > ul {
 .container h1 {
   font-weight: normal;
   margin-bottom: 10px;
-  color: #c62556;
+  color: #19C6FF;
 }
 .container h2 {
   margin-bottom: 5px;
-  color: #c62556;
+  color: #19C6FF;
 }
 .container p {
   margin-top: 0;
 }
 .container a {
-  color: #eea923;
+  color: #B700FF;
 }
 .container a:hover {
   text-decoration: none;
@@ -77,12 +76,12 @@ header nav a:hover > ul {
   top: 61px;
   left: 0;
   min-height: calc(100% - 61px);
-  border: 1px solid #c62556;
+  border: 1px solid #19C6FF;
   padding: 0;
   margin: 0;
 }
 #example-list h3 {
-  background: #c62556;
+  background: #19C6FF;
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -96,14 +95,14 @@ header nav a:hover > ul {
   width: 100%;
   background: transparent;
   border: 0;
-  color: #eea923;
+  color: #B700FF;
   padding: 5px 25px;
   font-size: 16px;
   font-weight: lighter;
   font-family: inherit;
 }
 #example-list button:hover {
-  color: #c62556;
+  color: #19C6FF;
   cursor: pointer;
 }
 #example-list button:focus {
@@ -117,9 +116,9 @@ header nav a:hover > ul {
 }
 #code-wrap #code-control button {
   background: none;
-  color: #fff;
+  color: #B700FF;
   font-size: 20px;
-  border: 2px solid #fff;
+  border: 2px solid #19C6FF;
   padding: 3px 15px;
   float: left;
   margin-right: 10px;
@@ -129,15 +128,17 @@ header nav a:hover > ul {
   height: 40px;
 }
 #code-wrap #code-control button:hover {
-  color: #eea923;
   cursor: pointer;
+}
+#code-wrap #code-control button:hover:after {
+  color: #B700FF;
 }
 #code-wrap #code-control button:focus {
   outline: none;
 }
 #code-wrap #code-control button:after {
   margin-left: 5px;
-  color: #c62556;
+  color: #19C6FF;
 }
 #code-wrap #code-control #run:after {
   content: "▶";
@@ -162,13 +163,64 @@ footer {
   text-align: center;
 }
 footer a {
-  color: #eea923;
+  color: #B700FF;
   text-align: center;
   font-size: 14px;
   text-decoration: none;
 }
 footer a:hover {
   text-decoration: underline;
+}
+.markdown pre {
+  font-size: 1rem;
+  padding: .66001rem 9.5px 9.5px;
+  line-height: 2rem;
+  background: -webkit-linear-gradient(top, #fff 0, #fff 0rem, #f5f7fa 0rem, #f5f7fa 2rem, #fff 2rem, #fff 4rem);
+  background: linear-gradient(to bottom, #fff 0, #fff 0rem, #f5f7fa 0rem, #f5f7fa 2rem, #fff 2rem, #fff 4rem);
+  background-size: 100% 4rem;
+  border-color: #D3DAEA;
+  overflow: auto;
+  display: block;
+  margin: 0 0 10px;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.markdown code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.markdown code .hljs-number,
+.markdown code .hljs-command,
+.markdown code .hljs-string,
+.markdown code .hljs-tag .hljs-value,
+.markdown code .hljs-rules .hljs-value,
+.markdown code .hljs-phpdoc,
+.markdown code .hljs-dartdoc,
+.markdown code .tex .hljs-formula,
+.markdown code .hljs-regexp,
+.markdown code .hljs-hexcolor,
+.markdown code .hljs-link_url {
+  color: #2aa198;
+}
+.markdown code .hljs-title,
+.markdown code .hljs-localvars,
+.markdown code .hljs-chunk,
+.markdown code .hljs-decorator,
+.markdown code .hljs-built_in,
+.markdown code .hljs-identifier,
+.markdown code .vhdl .hljs-literal,
+.markdown code .hljs-id,
+.markdown code .css .hljs-function {
+  color: #268bd2;
 }
 html {
   position: relative;
@@ -177,9 +229,9 @@ html {
 body,
 html {
   margin: 0;
-  background: #222;
+  background: #f5f5f5 url('../assets/img-noise-30x30.png');
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  color: #333;
   min-height: 100%;
 }
 canvas {

@@ -91,26 +91,22 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#audio" class="tsd-kind-icon">audio</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#camera" class="tsd-kind-icon">camera</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#audiomgr" class="tsd-kind-icon">audio<wbr>Mgr</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#ctx" class="tsd-kind-icon">ctx</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#debug" class="tsd-kind-icon">debug</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#height" class="tsd-kind-icon">height</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#init" class="tsd-kind-icon">init</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#input" class="tsd-kind-icon">input</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#resources" class="tsd-kind-icon">resources</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#ui" class="tsd-kind-icon">ui</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#resourcemgr" class="tsd-kind-icon">resource<wbr>Mgr</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#statemgr" class="tsd-kind-icon">state<wbr>Mgr</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#width" class="tsd-kind-icon">width</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.game.html#world" class="tsd-kind-icon">world</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.game.html#addsound" class="tsd-kind-icon">add<wbr>Sound</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.game.html#addstate" class="tsd-kind-icon">add<wbr>State</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.game.html#centercanvas" class="tsd-kind-icon">center<wbr>Canvas</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.game.html#load" class="tsd-kind-icon">load</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.game.html#render" class="tsd-kind-icon">render</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.game.html#run" class="tsd-kind-icon">run</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.game.html#setupcanvas" class="tsd-kind-icon">setup<wbr>Canvas</a></li>
 							</ul>
@@ -124,13 +120,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Game<span class="tsd-signature-symbol">(</span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.game.html" class="tsd-signature-type">Game</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Game<span class="tsd-signature-symbol">(</span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.game.html" class="tsd-signature-type">Game</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/game.ts:17</li>
+									<li>Defined in core/game.ts:10</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -141,9 +137,6 @@
 								<li>
 									<h5>height: <span class="tsd-signature-type">number</span></h5>
 								</li>
-								<li>
-									<h5>selector: <span class="tsd-signature-type">string</span></h5>
-								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="mini2d.game.html" class="tsd-signature-type">Game</a></h4>
 						</li>
@@ -153,22 +146,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="audio" class="tsd-anchor"></a>
-					<h3>audio</h3>
-					<div class="tsd-signature tsd-kind-icon">audio<span class="tsd-signature-symbol">:</span> <a href="mini2d.audio.html" class="tsd-signature-type">Audio</a></div>
+					<a name="audiomgr" class="tsd-anchor"></a>
+					<h3>audio<wbr>Mgr</h3>
+					<div class="tsd-signature tsd-kind-icon">audio<wbr>Mgr<span class="tsd-signature-symbol">:</span> <a href="mini2d.audiomanager.html" class="tsd-signature-type">AudioManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in core/game.ts:13</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="camera" class="tsd-anchor"></a>
-					<h3>camera</h3>
-					<div class="tsd-signature tsd-kind-icon">camera<span class="tsd-signature-symbol">:</span> <a href="mini2d.camera.html" class="tsd-signature-type">Camera</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in core/game.ts:7</li>
+							<li>Defined in core/game.ts:9</li>
 						</ul>
 					</aside>
 				</section>
@@ -183,16 +166,6 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="debug" class="tsd-anchor"></a>
-					<h3>debug</h3>
-					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <a href="mini2d.debug.html" class="tsd-signature-type">Debug</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in core/game.ts:12</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="height" class="tsd-anchor"></a>
 					<h3>height</h3>
 					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -203,44 +176,19 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="init" class="tsd-anchor"></a>
-					<h3>init</h3>
-					<div class="tsd-signature tsd-kind-icon">init<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in core/game.ts:16</li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="input" class="tsd-anchor"></a>
 					<h3>input</h3>
 					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <a href="mini2d.input.html" class="tsd-signature-type">Input</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in core/game.ts:11</li>
+							<li>Defined in core/game.ts:7</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="resources" class="tsd-anchor"></a>
-					<h3>resources</h3>
-					<div class="tsd-signature tsd-kind-icon">resources<span class="tsd-signature-symbol">:</span> <a href="mini2d.resources.html" class="tsd-signature-type">Resources</a></div>
+					<a name="resourcemgr" class="tsd-anchor"></a>
+					<h3>resource<wbr>Mgr</h3>
+					<div class="tsd-signature tsd-kind-icon">resource<wbr>Mgr<span class="tsd-signature-symbol">:</span> <a href="mini2d.resourcemanager.html" class="tsd-signature-type">ResourceManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in core/game.ts:8</li>
@@ -248,39 +196,14 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="ui" class="tsd-anchor"></a>
-					<h3>ui</h3>
-					<div class="tsd-signature tsd-kind-icon">ui<span class="tsd-signature-symbol">:</span> <a href="mini2d.ui.html" class="tsd-signature-type">UI</a></div>
+					<a name="statemgr" class="tsd-anchor"></a>
+					<h3>state<wbr>Mgr</h3>
+					<div class="tsd-signature tsd-kind-icon">state<wbr>Mgr<span class="tsd-signature-symbol">:</span> <a href="mini2d.statemanager.html" class="tsd-signature-type">StateManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in core/game.ts:10</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="update" class="tsd-anchor"></a>
-					<h3>update</h3>
-					<div class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in core/game.ts:17</li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="width" class="tsd-anchor"></a>
@@ -292,19 +215,55 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="world" class="tsd-anchor"></a>
-					<h3>world</h3>
-					<div class="tsd-signature tsd-kind-icon">world<span class="tsd-signature-symbol">:</span> <a href="mini2d.world.html" class="tsd-signature-type">World</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in core/game.ts:9</li>
-						</ul>
-					</aside>
-				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addsound" class="tsd-anchor"></a>
+					<h3>add<wbr>Sound</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Sound<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.sound.html" class="tsd-signature-type">Sound</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in core/game.ts:29</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mini2d.sound.html" class="tsd-signature-type">Sound</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addstate" class="tsd-anchor"></a>
+					<h3>add<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>State<span class="tsd-signature-symbol">(</span>stateObj<span class="tsd-signature-symbol">: </span><a href="../interfaces/mini2d.stateobject.html" class="tsd-signature-type">StateObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.state.html" class="tsd-signature-type">State</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in core/game.ts:26</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>stateObj: <a href="../interfaces/mini2d.stateobject.html" class="tsd-signature-type">StateObject</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mini2d.state.html" class="tsd-signature-type">State</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="centercanvas" class="tsd-anchor"></a>
 					<h3>center<wbr>Canvas</h3>
@@ -315,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/game.ts:33</li>
+									<li>Defined in core/game.ts:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -326,13 +285,13 @@
 					<a name="load" class="tsd-anchor"></a>
 					<h3>load</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>assets<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>assets<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, state<span class="tsd-signature-symbol">: </span><a href="mini2d.state.html" class="tsd-signature-type">State</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/game.ts:25</li>
+									<li>Defined in core/game.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -340,24 +299,10 @@
 								<li>
 									<h5>assets: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
+								<li>
+									<h5>state: <a href="mini2d.state.html" class="tsd-signature-type">State</a></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="render" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> render</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in core/game.ts:53</li>
-								</ul>
-							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -372,7 +317,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/game.ts:40</li>
+									<li>Defined in core/game.ts:33</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -383,21 +328,15 @@
 					<a name="setupcanvas" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> setup<wbr>Canvas</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">setup<wbr>Canvas<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CanvasRenderingContext2D</span></li>
+						<li class="tsd-signature tsd-kind-icon">setup<wbr>Canvas<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CanvasRenderingContext2D</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/game.ts:60</li>
+									<li>Defined in core/game.ts:45</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>selector: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CanvasRenderingContext2D</span></h4>
 						</li>
 					</ul>
@@ -418,7 +357,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="mini2d.audio.html" class="tsd-kind-icon">Audio</a>
+						<a href="mini2d.audiomanager.html" class="tsd-kind-icon">Audio<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.body.html" class="tsd-kind-icon">Body</a>
@@ -441,49 +380,37 @@
 								<a href="mini2d.game.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#audio" class="tsd-kind-icon">audio</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#camera" class="tsd-kind-icon">camera</a>
+								<a href="mini2d.game.html#audiomgr" class="tsd-kind-icon">audio<wbr>Mgr</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.game.html#ctx" class="tsd-kind-icon">ctx</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#debug" class="tsd-kind-icon">debug</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.game.html#height" class="tsd-kind-icon">height</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#init" class="tsd-kind-icon">init</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.game.html#input" class="tsd-kind-icon">input</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#resources" class="tsd-kind-icon">resources</a>
+								<a href="mini2d.game.html#resourcemgr" class="tsd-kind-icon">resource<wbr>Mgr</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#ui" class="tsd-kind-icon">ui</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#update" class="tsd-kind-icon">update</a>
+								<a href="mini2d.game.html#statemgr" class="tsd-kind-icon">state<wbr>Mgr</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.game.html#width" class="tsd-kind-icon">width</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.game.html#world" class="tsd-kind-icon">world</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.game.html#addsound" class="tsd-kind-icon">add<wbr>Sound</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.game.html#addstate" class="tsd-kind-icon">add<wbr>State</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.game.html#centercanvas" class="tsd-kind-icon">center<wbr>Canvas</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.game.html#load" class="tsd-kind-icon">load</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="mini2d.game.html#render" class="tsd-kind-icon">render</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="mini2d.game.html#run" class="tsd-kind-icon">run</a>
@@ -502,13 +429,19 @@
 						<a href="mini2d.point.html" class="tsd-kind-icon">Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="mini2d.resources.html" class="tsd-kind-icon">Resources</a>
+						<a href="mini2d.resourcemanager.html" class="tsd-kind-icon">Resource<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.sound.html" class="tsd-kind-icon">Sound</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.sprite.html" class="tsd-kind-icon">Sprite</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.state.html" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>
@@ -523,10 +456,16 @@
 						<a href="../interfaces/mini2d.collisiondirection.html" class="tsd-kind-icon">Collision<wbr>Direction</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mini2d.destroyable.html" class="tsd-kind-icon">Destroyable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mini2d.drawable.html" class="tsd-kind-icon">Drawable</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mini2d.measurable.html" class="tsd-kind-icon">Measurable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mini2d.stateobject.html" class="tsd-kind-icon">State<wbr>Object</a>
 					</li>
 				</ul>
 			</nav>

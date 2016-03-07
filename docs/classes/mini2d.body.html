@@ -82,6 +82,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/mini2d.measurable.html" class="tsd-signature-type">Measurable</a></li>
+					<li><a href="../interfaces/mini2d.destroyable.html" class="tsd-signature-type">Destroyable</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -114,6 +115,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#collideworldbounds" class="tsd-kind-icon">collide<wbr>World<wbr>Bounds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#destroy" class="tsd-kind-icon">destroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#handlecollision" class="tsd-kind-icon">handle<wbr>Collision</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.body.html#handleworldcollision" class="tsd-kind-icon">handle<wbr>World<wbr>Collision</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.body.html#resolutecollision" class="tsd-kind-icon">resolute<wbr>Collision</a></li>
@@ -330,6 +332,24 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/mini2d.destroyable.html">Destroyable</a>.<a href="../interfaces/mini2d.destroyable.html#destroy">destroy</a></p>
+								<ul>
+									<li>Defined in physics/body.ts:70</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="handlecollision" class="tsd-anchor"></a>
 					<h3>handle<wbr>Collision</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -362,7 +382,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:117</li>
+									<li>Defined in physics/body.ts:131</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -379,7 +399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:70</li>
+									<li>Defined in physics/body.ts:84</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -425,7 +445,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="mini2d.audio.html" class="tsd-kind-icon">Audio</a>
+						<a href="mini2d.audiomanager.html" class="tsd-kind-icon">Audio<wbr>Manager</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -472,6 +492,9 @@
 								<a href="mini2d.body.html#collideworldbounds" class="tsd-kind-icon">collide<wbr>World<wbr>Bounds</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.body.html#handlecollision" class="tsd-kind-icon">handle<wbr>Collision</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -506,13 +529,19 @@
 						<a href="mini2d.point.html" class="tsd-kind-icon">Point</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="mini2d.resources.html" class="tsd-kind-icon">Resources</a>
+						<a href="mini2d.resourcemanager.html" class="tsd-kind-icon">Resource<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.sound.html" class="tsd-kind-icon">Sound</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.sprite.html" class="tsd-kind-icon">Sprite</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.state.html" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>
@@ -527,10 +556,16 @@
 						<a href="../interfaces/mini2d.collisiondirection.html" class="tsd-kind-icon">Collision<wbr>Direction</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mini2d.destroyable.html" class="tsd-kind-icon">Destroyable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mini2d.drawable.html" class="tsd-kind-icon">Drawable</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/mini2d.measurable.html" class="tsd-kind-icon">Measurable</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/mini2d.stateobject.html" class="tsd-kind-icon">State<wbr>Object</a>
 					</li>
 				</ul>
 			</nav>
