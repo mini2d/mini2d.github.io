@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Martin Petýrek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Tutorials</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">mini<span>2d</span></a>
+        <nav>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/examples.html">Examples</a>
+            <a href="/docs/modules/mini2d.html">Documentation</a>
+        </nav>
+    </header>
+    <div class="container narrow">
+        <article class="markdown">
+            <a href="/tutorials.html">< Back to tutorials</a>
+            <h1>Writing code</h1>
+            <p>Once your webserver is installed and running, you are going to want to create a folder inside your htdocs folder. Let’s call it “example” for instance.</p>
+            <p>Next up, navigate inside this folder and create index.html and paste there the following code.</p>
+
+<pre><code class="language-sh">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=<span class="hljs-string">"utf-8"</span>&gt;
+        &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;
+        &lt;title&gt;Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script src=<span class="hljs-string">"mini2d.js"</span>&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>You should already be similiar with HTML, so these should all be clear. Maybe with the exception of the meta viewport line, which simply tells the device to scale the content properly for mobile devices.</p>
+<p>Now you should up and running and ready to create some awesome games!</p>
+<p>Add the following line above the &lt;/body&gt; tag.</p>
+
+<pre><code class="language-sh">&lt;script src=<span class="hljs-string">"mygame.js"</span>&gt;&lt;/script&gt;
+</code></pre>
+
+            <p>Next you’re going to want to create the file mygame.js because it doesn’t exist just yet. So let’s fix that.</p>
+            <p>Create the file and paste the following code (taken straight from the pong example.</p>
+<pre><code class="language-sh">var game = new mini2d.Game(<span class="hljs-number">600</span>, <span class="hljs-number">480</span>);
+var menuState = game.addState({
+    init: <span class="hljs-function"><span class="hljs-title">function</span></span>(){
+        var btn = this.addButton(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-title">function</span></span> () {
+            gameState.start();
+        }, <span class="hljs-string">'assets/btn.png'</span>, <span class="hljs-string">'assets/btn-active.png'</span>).addText(<span class="hljs-string">'START'</span>, <span class="hljs-string">'15px sans-serif'</span>, <span class="hljs-string">'#fff'</span>);
+        btn.position.x = game.width / <span class="hljs-number">2</span> - btn.width / <span class="hljs-number">2</span>;
+        btn.position.y = game.height / <span class="hljs-number">2</span> - btn.height / <span class="hljs-number">2</span>;
+    },
+});
+var gameState = game.addState({
+    init: <span class="hljs-function"><span class="hljs-title">function</span></span>(){
+        game.paddle1 = this.addSprite(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-string">'assets/paddle.png'</span>);
+        game.paddle1.enableBody();
+        game.paddle1.body.collideWorldBounds();
+        game.paddle1.body.immovable = <span class="hljs-literal">true</span>;
+        game.paddle1.body.checkCollision = {top: <span class="hljs-literal">false</span>, bottom: <span class="hljs-literal">false</span>, left: <span class="hljs-literal">false</span>, right: <span class="hljs-literal">true</span>};
+
+        game.paddle2 = this.addSprite(<span class="hljs-number">500</span>, <span class="hljs-number">50</span>, <span class="hljs-string">'assets/paddle.png'</span>);
+        game.paddle2.enableBody();
+        game.paddle2.body.collideWorldBounds();
+        game.paddle2.body.immovable = <span class="hljs-literal">true</span>;
+        game.paddle2.body.checkCollision = {top: <span class="hljs-literal">false</span>, bottom: <span class="hljs-literal">false</span>, left: <span class="hljs-literal">true</span>, right: <span class="hljs-literal">false</span>};
+
+        game.ball = this.addSprite(game.width / <span class="hljs-number">2</span>, game.height / <span class="hljs-number">2</span>, <span class="hljs-string">'assets/ball.png'</span>);
+        game.ball.enableBody();
+        game.ball.body.velocity.x = <span class="hljs-number">250</span>;
+        game.ball.body.velocity.y = <span class="hljs-number">100</span>;
+        game.ball.body.bounce = <span class="hljs-number">1</span>;
+        game.ball.body.collideWorldBounds(<span class="hljs-keyword">function</span>(direction){
+            <span class="hljs-keyword">if</span>(direction == <span class="hljs-string">'left'</span>){
+                game.player2points += <span class="hljs-number">1</span>;
+                game.player2score.text = <span class="hljs-string">"Player 2 score: "</span> + game.player2points;
+                game.ball.body.position.x = game.width / <span class="hljs-number">2</span>;
+                game.ball.body.position.y = game.height / <span class="hljs-number">2</span>;
+            }
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(direction == <span class="hljs-string">'right'</span>){
+                game.player1points += <span class="hljs-number">1</span>;
+                game.player1score.text = <span class="hljs-string">"Player 1 score: "</span> + game.player1points;
+                game.ball.body.position.x = game.width / <span class="hljs-number">2</span>;
+                game.ball.body.position.y = game.height / <span class="hljs-number">2</span>;
+            }
+        });
+        game.player1points = <span class="hljs-number">0</span>;
+        game.player2points = <span class="hljs-number">0</span>;
+        game.player1score = this.addText(<span class="hljs-string">'Player 1 score: 0'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'15px sans-serif'</span>, <span class="hljs-string">'#000'</span>);
+        game.player2score = this.addText(<span class="hljs-string">'Player 2 score: 0'</span>, <span class="hljs-number">450</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'15px sans-serif'</span>, <span class="hljs-string">'#000'</span>);
+    },
+    update: <span class="hljs-function"><span class="hljs-title">function</span></span>(){
+        game.paddle1.body.position.y = game.input.y - game.paddle1.body.height / <span class="hljs-number">2</span>;
+        game.paddle2.body.position.y = game.input.y - game.paddle2.body.height / <span class="hljs-number">2</span>;
+    }
+});
+
+game.load([<span class="hljs-string">'assets/paddle.png'</span>, <span class="hljs-string">'assets/ball.png'</span>, <span class="hljs-string">'assets/btn.png'</span>, <span class="hljs-string">'assets/btn-active.png'</span>], menuState);
+</code></pre>
+
+                <p>If you followed all the steps correctly you should be able to find your game here <a href="http://localhost:8080/example/">http://localhost:8080/example/</a>.</p>
+            </article>
+        </div>
+
+        <footer>
+            <a href="http://petyrek.github.io/">© 2016 Martin Petýrek</a>
+        </footer>
+
+        <script src="/lib/jquery/jquery-2.2.0.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+    </html>

@@ -12,10 +12,15 @@ var examples = {
 var init = function () {
   // for every file in every category, create a button to load up the code
   for (var category in examples) {
+
+    // create collumn for category
+    var col = document.createElement('div');
+    col.className += "col";
+
     // create title for category
     var title = document.createElement('h3');
     title.innerHTML = category;
-    $('#example-list').append(title);
+    $(col).append(title);
 
     // create buttons for category
     var files = examples[category];
@@ -26,10 +31,10 @@ var init = function () {
       btn.onclick = function () {
         loadScript(this.fileName);
       }
-      $('#example-list').append(btn);
+      $(col).append(btn);
     }
+    $('#example-list').append(col);
   }
-  $('.container').css('margin-left', $('#example-list').width());
 
   var editor = window.editor = ace.edit("code");
   editor.setTheme("ace/theme/monokai");
