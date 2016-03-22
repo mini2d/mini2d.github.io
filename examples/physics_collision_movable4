@@ -1,0 +1,84 @@
+var game = new mini2d.Game(600, 250);
+var state = game.addState({
+    init: function(){
+        game.sprites = [];
+
+        for(var i = 0, j = 50; i < 10; i++){
+            if(i !== 1 && i !== 8){
+                var sprite = this.addSprite(j, i % 2 === 0? 50 : 150, 'assets/logo.png');
+                sprite.enableBody();
+                sprite.body.velocity.x = 50 * (i % 2 === 0? 1 : -1);
+                sprite.body.velocity.y = 50 * (i % 2 === 0? 1 : -1)
+                sprite.body.collideWorldBounds();
+                game.sprites.push(sprite);
+            }
+            j += (i % 2 === 0? 0 : 100);
+        }
+    },
+    update: function(){
+        for(var i = 0; i < game.sprites.length; i++){
+            for(var j = i + 1; j < game.sprites.length; j++){
+                game.sprites[i].body.collide(game.sprites[j].body);
+            }
+        }
+    }
+});
+
+game.load(['assets/logo.png'], state);
+
+
+
+var game = new mini2d.Game(600, 250);
+var state = game.addState({
+    init: function(){
+        var sprite2 = this.addSprite(50, 150, 'assets/ball.png');
+        sprite2.enableBody();
+        sprite2.body.velocity.x = 150;
+        sprite2.body.velocity.y = -150;
+        sprite2.body.collideWorldBounds();
+
+        var sprite3 = this.addSprite(150, 50, 'assets/ball.png');
+        sprite3.enableBody();
+        sprite3.body.velocity.x = -150;
+        sprite3.body.velocity.y = 150;
+        sprite3.body.collideWorldBounds();
+
+        var sprite4 = this.addSprite(150, 150, 'assets/ball.png');
+        sprite4.enableBody();
+        sprite4.body.velocity.x = 150;
+        sprite4.body.velocity.y = -150;
+        sprite4.body.collideWorldBounds();
+
+        var sprite5 = this.addSprite(250, 50, 'assets/ball.png');
+        sprite5.enableBody();
+        sprite5.body.velocity.x = -150;
+        sprite5.body.velocity.y = 150;
+        sprite5.body.collideWorldBounds();
+
+        var sprite6 = this.addSprite(250, 150, 'assets/ball.png');
+        sprite6.enableBody();
+        sprite6.body.velocity.x = 150;
+        sprite6.body.velocity.y = -150;
+        sprite6.body.collideWorldBounds();
+
+        var sprite7 = this.addSprite(350, 50, 'assets/ball.png');
+        sprite7.enableBody();
+        sprite7.body.velocity.x = -150;
+        sprite7.body.velocity.y = 150;
+        sprite7.body.collideWorldBounds();
+
+        var sprite8 = this.addSprite(350, 150, 'assets/ball.png');
+        sprite8.enableBody();
+        sprite8.body.velocity.x = 150;
+        sprite8.body.velocity.y = -150;
+        sprite8.body.collideWorldBounds();
+
+        var sprite9 = this.addSprite(450, 50, 'assets/ball.png');
+        sprite9.enableBody();
+        sprite9.body.velocity.x = -150;
+        sprite9.body.velocity.y = 150;
+        sprite9.body.collideWorldBounds();
+    }
+});
+
+game.load(['assets/ball.png'], state);

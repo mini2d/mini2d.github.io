@@ -1,0 +1,79 @@
+var game = new mini2d.Game(450, 800);
+var gameState = game.addState({
+    init: function(){
+        game.paddle = this.addSprite(175, 700, 'assets/btn.png');
+        game.paddle.enableBody();
+        game.paddle.body.collideWorldBounds();
+        game.paddle.body.immovable = true;
+        game.paddle.body.checkCollision = {top: true, bottom: false, left: false, right: false};
+
+        game.ball = this.addSprite(game.width / 2, game.height / 2, 'assets/ball.png');
+        game.ball.enableBody();
+        game.ball.body.velocity.x = 100;
+        game.ball.body.velocity.y = 500;
+        game.ball.body.bounce = 1;
+
+        game.blocks = [];
+        for (var i = 0; i < 4; i++){
+            for (var j = 0; j < 3; j++){
+                var block = this.addSprite(50 + i * 100, 50 + j * 100, 'assets/logo.png');
+                block.enableBody();
+                block.body.immovable = true;
+                game.blocks.push(block);
+            }
+        }
+
+        game.lifes = 1;
+
+        game.ball.body.collideWorldBounds(function(direction){
+            if(direction == 'bottom'){
+                game.lifes--;
+                game.lifesText.text = "Lifes: " + game.lifes;
+            }
+            if(game.lifes < 1){
+                lostState.start();
+            }
+        });
+
+        game.lifesText = this.addText('Lifes: ' + game.lifes, 0, 10, '15px sans-serif', '#000');
+    },
+    update: function(){
+        game.paddle.body.position.x = game.input.x - game.paddle.body.width / 2;
+
+        game.paddle.body.collide(game.ball.body);
+        for(var i = 0; i < game.blocks.length; i++){
+            game.ball.body.collide(game.blocks[i].body, function(){
+                game.blocks[i].destroy();
+                game.blocks.splice(i, 1);
+
+                if(game.blocks.length == 0){
+                    wonState.start();
+                }
+            }, false);
+        }
+    }
+});
+
+var wonState = game.addState({
+    init: function(){
+        var txt = this.addText(100, 100, 'you won!');
+        var btn = this.addButton(0, 0, function () {
+            gameState.start();
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('RESTART', '15px sans-serif', '#fff');
+        btn.position.x = game.width / 2 - btn.width / 2;
+        btn.position.y = game.height / 2 - btn.height / 2;
+    },
+});
+
+var lostState = game.addState({
+    init: function(){
+        var txt = this.addText(100, 100, 'you lost!');
+        var btn = this.addButton(0, 0, function () {
+            gameState.start();
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('RESTART', '15px sans-serif', '#fff');
+        btn.position.x = game.width / 2 - btn.width / 2;
+        btn.position.y = game.height / 2 - btn.height / 2;
+    },
+});
+
+game.load(['assets/ball.png', 'assets/btn.png', 'assets/btn-active.png', 'assets/logo.png'], gameState);

@@ -13,14 +13,12 @@
       margin-right: 10px;
       margin-bottom: 10px;
       font-family: inherit;
-      font-weight: lighter;
+      font-weight: normal;
       height: 40px;
 
       &:hover {
         cursor: pointer;
-        &:after{
-            color: @color1;
-        }
+        color: @color2;
       }
       &:focus {
         outline: none;
@@ -33,7 +31,7 @@
     #run {
       &:after{
         content: "▶";
-        vertical-align: middle;
+        vertical-align: text-top;
       }
     }
     #hide{
@@ -45,7 +43,6 @@
   }
   #code {
     height: 300px;
-    width: calc("100% - 100px");
     font-size: 13px;
     text-align: left;
     border: 1px solid #444;

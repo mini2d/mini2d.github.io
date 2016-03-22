@@ -43,12 +43,15 @@ var gameState = game.addState({
         });
         game.player1points = 0;
         game.player2points = 0;
-        game.player1score = this.addText('Player 1 score: 0', 0, 10, '15px sans-serif', '#000');
-        game.player2score = this.addText('Player 2 score: 0', 450, 10, '15px sans-serif', '#000');
+        game.player1score = this.addText(0, 10, 'Player 1 score: 0', '15px sans-serif', '#000');
+        game.player2score = this.addText(450, 10, 'Player 2 score: 0', '15px sans-serif', '#000');
     },
     update: function(){
         game.paddle1.body.position.y = game.input.y - game.paddle1.body.height / 2;
         game.paddle2.body.position.y = game.input.y - game.paddle2.body.height / 2;
+
+        game.paddle1.body.collide(game.ball.body);
+        game.paddle2.body.collide(game.ball.body);
     }
 });
 

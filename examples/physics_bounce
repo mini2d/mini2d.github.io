@@ -1,0 +1,27 @@
+var game = new mini2d.Game(600, 480);
+var state = game.addState({
+    init: function(){
+
+        var sprite1 = this.addSprite(100, 350, 'assets/ball.png');
+        sprite1.enableBody();
+        sprite1.body.velocity.y = 200;
+        sprite1.body.restitution = 0;
+        sprite1.body.collideWorldBounds();
+
+        var sprite2 = this.addSprite(200, 350, 'assets/ball.png');
+        sprite2.enableBody();
+        sprite2.body.velocity.y = 200;
+        sprite2.body.restitution = 0.5;
+        sprite2.body.collideWorldBounds();
+
+        var sprite3 = this.addSprite(300, 350, 'assets/ball.png');
+        sprite3.enableBody();
+        sprite3.body.velocity.y = 200;
+        sprite3.body.restitution = 0.8;
+        sprite3.body.collideWorldBounds();
+
+        this.world.gravity.y = 200;
+    }
+});
+
+game.load(['assets/ball.png'], state);

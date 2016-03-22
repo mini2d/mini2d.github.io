@@ -1,17 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 header {
   text-align: left;
-  border-bottom: 1px solid #19C6FF;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  background: #333;
 }
 header .brand {
-  color: #B700FF;
+  color: #25ae90;
   text-decoration: none;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 30px;
   font-family: inherit;
   font-weight: lighter;
   text-align: left;
@@ -20,18 +20,18 @@ header .brand {
   display: inline-block;
 }
 header .brand span {
-  color: #19C6FF;
+  color: #5b5e63;
 }
 header nav {
   float: right;
   font-size: 0;
 }
 header nav a {
-  color: #B700FF;
-  font-size: 20px;
+  color: #25ae90;
+  font-size: 18px;
   font-weight: lighter;
   text-decoration: none;
-  line-height: 60px;
+  line-height: 50px;
   margin-right: 15px;
   display: inline-block;
 }
@@ -39,29 +39,24 @@ header nav a > ul {
   display: none;
 }
 header nav a:hover {
-  color: #19C6FF;
+  color: #5b5e63;
 }
 header nav a:hover > ul {
   display: block;
 }
 .container {
-  margin-top: 61px;
+  margin-top: 50px;
   padding: 30px;
 }
 .container h1 {
   font-weight: normal;
-  margin-bottom: 10px;
-  color: #19C6FF;
+  color: #5b5e63;
 }
 .container h2 {
-  margin-bottom: 5px;
-  color: #19C6FF;
-}
-.container p {
-  margin-top: 0;
+  color: #5b5e63;
 }
 .container a {
-  color: #B700FF;
+  color: #25ae90;
 }
 .container a:hover {
   text-decoration: none;
@@ -72,38 +67,33 @@ header nav a:hover > ul {
   margin-right: auto;
 }
 #example-list {
-  position: fixed;
-  top: 61px;
-  left: 0;
-  min-height: calc(100% - 61px);
-  border: 1px solid #19C6FF;
-  padding: 0;
-  margin: 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+#example-list .col {
+  float: left;
+  margin-right: 30px;
 }
 #example-list h3 {
-  background: #19C6FF;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  margin: 0;
+  color: #5b5e63;
   font-weight: bold;
   font-size: 20px;
   line-height: 1;
 }
 #example-list button {
   display: block;
-  width: 100%;
   background: transparent;
   border: 0;
-  color: #B700FF;
-  padding: 5px 25px;
+  color: #25ae90;
   font-size: 16px;
-  font-weight: lighter;
-  font-family: inherit;
+  font-weight: normal;
+  padding: 0;
+  margin-bottom: 10px;
+  text-decoration: underline;
 }
 #example-list button:hover {
-  color: #19C6FF;
   cursor: pointer;
+  text-decoration: none;
 }
 #example-list button:focus {
   outline: none;
@@ -116,33 +106,31 @@ header nav a:hover > ul {
 }
 #code-wrap #code-control button {
   background: none;
-  color: #B700FF;
+  color: #25ae90;
   font-size: 20px;
-  border: 2px solid #19C6FF;
+  border: 2px solid #5b5e63;
   padding: 3px 15px;
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
   font-family: inherit;
-  font-weight: lighter;
+  font-weight: normal;
   height: 40px;
 }
 #code-wrap #code-control button:hover {
   cursor: pointer;
-}
-#code-wrap #code-control button:hover:after {
-  color: #B700FF;
+  color: #5b5e63;
 }
 #code-wrap #code-control button:focus {
   outline: none;
 }
 #code-wrap #code-control button:after {
   margin-left: 5px;
-  color: #19C6FF;
+  color: #5b5e63;
 }
 #code-wrap #code-control #run:after {
   content: "▶";
-  vertical-align: middle;
+  vertical-align: text-top;
 }
 #code-wrap #code-control #hide:after {
   content: "■";
@@ -150,7 +138,6 @@ header nav a:hover > ul {
 }
 #code-wrap #code {
   height: 300px;
-  width: calc("100% - 100px");
   font-size: 13px;
   text-align: left;
   border: 1px solid #444;
@@ -163,7 +150,7 @@ footer {
   text-align: center;
 }
 footer a {
-  color: #B700FF;
+  color: #25ae90;
   text-align: center;
   font-size: 14px;
   text-decoration: none;
@@ -229,7 +216,7 @@ html {
 body,
 html {
   margin: 0;
-  background: #f5f5f5 url('../assets/img-noise-30x30.png');
+  background: #f4f4f4;
   font-family: 'Open Sans', sans-serif;
   color: #333;
   min-height: 100%;
