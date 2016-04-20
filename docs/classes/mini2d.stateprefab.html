@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AudioManager | mini2d</title>
+	<title>StatePrefab | mini2d</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,10 +60,10 @@
 					<a href="../modules/mini2d.html">mini2d</a>
 				</li>
 				<li>
-					<a href="mini2d.audiomanager.html">AudioManager</a>
+					<a href="mini2d.stateprefab.html">StatePrefab</a>
 				</li>
 			</ul>
-			<h1>Class AudioManager</h1>
+			<h1>Class StatePrefab</h1>
 		</div>
 	</div>
 </header>
@@ -74,7 +74,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AudioManager</span>
+						<span class="target">StatePrefab</span>
 					</li>
 				</ul>
 			</section>
@@ -85,20 +85,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mini2d.audiomanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mini2d.stateprefab.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.audiomanager.html#context" class="tsd-kind-icon">context</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.audiomanager.html#game" class="tsd-kind-icon">game</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.stateprefab.html#game" class="tsd-kind-icon">game</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.stateprefab.html#stateobj" class="tsd-kind-icon">state<wbr>Obj</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.audiomanager.html#addsound" class="tsd-kind-icon">add<wbr>Sound</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.stateprefab.html#start" class="tsd-kind-icon">start</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,18 +110,18 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Audio<wbr>Manager<span class="tsd-signature-symbol">(</span>game<span class="tsd-signature-symbol">: </span><a href="mini2d.game.html" class="tsd-signature-type">Game</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.audiomanager.html" class="tsd-signature-type">AudioManager</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>State<wbr>Prefab<span class="tsd-signature-symbol">(</span>game<span class="tsd-signature-symbol">: </span><a href="mini2d.game.html" class="tsd-signature-type">Game</a>, stateObj<span class="tsd-signature-symbol">: </span><a href="../interfaces/mini2d.stateobject.html" class="tsd-signature-type">StateObject</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.stateprefab.html" class="tsd-signature-type">StatePrefab</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in audio/audioManager.ts:12</li>
+									<li>Defined in states/statePrefab.ts:13</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>The constructor for the AudioManager class</p>
+									<p>A constructor for the StateManager class</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -134,8 +134,11 @@
 										</div>
 									</div>
 								</li>
+								<li>
+									<h5>stateObj: <a href="../interfaces/mini2d.stateobject.html" class="tsd-signature-type">StateObject</a></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="mini2d.audiomanager.html" class="tsd-signature-type">AudioManager</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="mini2d.stateprefab.html" class="tsd-signature-type">StatePrefab</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -143,27 +146,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="context" class="tsd-anchor"></a>
-					<h3>context</h3>
-					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AudioContext</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in audio/audioManager.ts:7</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The audio context used for playing sounds</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="game" class="tsd-anchor"></a>
 					<h3>game</h3>
 					<div class="tsd-signature tsd-kind-icon">game<span class="tsd-signature-symbol">:</span> <a href="mini2d.game.html" class="tsd-signature-type">Game</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in audio/audioManager.ts:12</li>
+							<li>Defined in states/statePrefab.ts:13</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -172,37 +160,43 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="stateobj" class="tsd-anchor"></a>
+					<h3>state<wbr>Obj</h3>
+					<div class="tsd-signature tsd-kind-icon">state<wbr>Obj<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mini2d.stateobject.html" class="tsd-signature-type">StateObject</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in states/statePrefab.ts:8</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The StateObject on which this prefab is based, copying the functions</p>
+						</div>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addsound" class="tsd-anchor"></a>
-					<h3>add<wbr>Sound</h3>
+					<a name="start" class="tsd-anchor"></a>
+					<h3>start</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Sound<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mini2d.sound.html" class="tsd-signature-type">Sound</a></li>
+						<li class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in audio/audioManager.ts:36</li>
+									<li>Defined in states/statePrefab.ts:27</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a new sound</p>
+									<p>Creates a game state based on this prefab and starts it</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>path: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Path to the sound file</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="mini2d.sound.html" class="tsd-signature-type">Sound</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -221,27 +215,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.audiomanager.html" class="tsd-kind-icon">Audio<wbr>Manager</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="mini2d.audiomanager.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.audiomanager.html#context" class="tsd-kind-icon">context</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.audiomanager.html#game" class="tsd-kind-icon">game</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="mini2d.audiomanager.html#addsound" class="tsd-kind-icon">add<wbr>Sound</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.body.html" class="tsd-kind-icon">Body</a>
 					</li>
@@ -287,9 +263,27 @@
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.stateprefab.html" class="tsd-kind-icon">State<wbr>Prefab</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mini2d.stateprefab.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.stateprefab.html#game" class="tsd-kind-icon">game</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.stateprefab.html#stateobj" class="tsd-kind-icon">state<wbr>Obj</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.stateprefab.html#start" class="tsd-kind-icon">start</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>
 					</li>

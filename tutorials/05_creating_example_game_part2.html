@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Martin Petýrek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="/dist/style.css">
+    <title>Tutorials</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">mini<span>2d</span></a>
+        <nav>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/examples.html">Examples</a>
+            <a href="/docs/modules/mini2d.html">Documentation</a>
+        </nav>
+    </header>
+    <div class="container narrow">
+        <article class="markdown">
+            <a href="/tutorials.html">< Back to tutorials</a>
+            <h1>Creating the example game - part 2</h1>
+            <p>In the previous part we created the menu state and now is time for us to finish the game and write the gameState, where the actual fun is going to happen.</p>
+
+            <h2>Creating the gameState</h2>
+            <p>Once again, we begin by calling the addState function. This time, however, specifying both the <em>init</em> and <em>update</em> function.</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">var</span> <span style="color: #a6e22e">gameState</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addState</span><span style="color: #f8f8f2">({</span>
+    <span style="color: #a6e22e">init</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(){</span>
+        <span style="color: #75715e">// more code to come</span>
+    <span style="color: #f8f8f2">},</span>
+    <span style="color: #a6e22e">update</span><span style="color: #f92672">:</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(){</span>
+        <span style="color: #75715e">// more code to come</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">});</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>That should already feel familiar from the previous chapter, so let us proceed!</p>
+
+            <h2>The init function</h2>
+            <p>Most of the code is to be in the init function, the engine will automatically take care of most of the tasks we need, so the <em>update</em> function will be pretty straight forward, but more on that later, let's now deal with the init function.</p>
+
+            <h3>Adding the paddles</h3>
+            <p>We beggin by adding the paddles. This is almost identical code twice, with the exception of the position of the paddles.</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addSprite</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">50</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">50</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;assets/paddle.png&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">enableBody</span><span style="color: #f8f8f2">();</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">collideWorldBounds</span><span style="color: #f8f8f2">();</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">immovable</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addSprite</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">500</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">50</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;assets/paddle.png&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">enableBody</span><span style="color: #f8f8f2">();</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">collideWorldBounds</span><span style="color: #f8f8f2">();</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">immovable</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+</pre></div>
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>Each paddle is represented by a sprite, which is simply created with the <em>addSprite</em> function. The arguments specify it's position and texture file.</p>
+            <p>Because we want to take advantage of the built in physics system of mini2d.js, we have to call the <em>enableBody</em> method on both of these sprites. This will create a body based on the sprite properties.</p>
+            <p>The next thing we are going to want to do, is call the <em>collideWorldBounds</em> method, which will ensure, that the paddles will remain inside the screen.</p>
+            <p>Last, but not least, we set the <em>immovable</em> property to true, this will cause the physics engine not move the sprites on impact.</p>
+
+            <h3>Adding the ball</h3>
+            <p>Now that we created ourselves a pair of paddles, we need a ball for our pong game, so let's create it.</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addSprite</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">width</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;assets/ball.png&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">enableBody</span><span style="color: #f8f8f2">();</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">velocity</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">x</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">250</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">velocity</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">bounce</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">collideWorldBounds</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">direction</span><span style="color: #f8f8f2">){</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">direction</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;left&#39;</span><span style="color: #f8f8f2">){</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player2points</span> <span style="color: #f92672">+=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player2score</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Player 2 score: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player2points</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">x</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">width</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
+    <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">direction</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;right&#39;</span><span style="color: #f8f8f2">){</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player1points</span> <span style="color: #f92672">+=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player1score</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">text</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Player 1 score: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player1points</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">x</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">width</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">});</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>This introduces a few more methods and properties. The velocity property simply tells the physics engine to move the ball accordingly every frame.
+              <br>The bounce property means how much will the velocity be reduced upon impact (0 being nullifying the velocity, 1 having no impact on velocity).
+            </p>
+            <p>Then we have familiar method <em>collideWorldBounds</em>. This time it has arguments though. The argument is a callback function to be called upon impact, supplying a direction parameter in the form of string, which specifies what side of the world did the body collide with.</p>
+            <p>The world collision callback then modifies properties we haven't declared yet. So let's fix that.</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player1points</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player2points</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player1score</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addText</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;Player 1 score: 0&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;15px sans-serif&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;#000&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">player2score</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">this</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">addText</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">450</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;Player 2 score: 0&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;15px sans-serif&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;#000&#39;</span><span style="color: #f8f8f2">);</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>The first two lines are just a variable for us to store the score.</p>
+            <p>The two following lines take advantage of the <em>Text</em> class, to create a score counter on the top of the screen.</p>
+            <p>The <em>addText</em> method should feel familiar, because we did something similar when adding text to the button. The only difference here being, the first two arguments specify the text's position, which was unnecessary for the button, because we wanted the text to be centered, which is handled automatically by the mini2d.js game engine.</p>
+
+            <h2>The update method</h2>
+            <p>Now that we have the init method ready for our game, it is time to write the update method as well.</p>
+            <p>In this method there are two things that we want to do.</p>
+            <ul>
+              <li>Position the paddles according to the mouse position.</li>
+              <li>Make the ball collide with the paddles.</li>
+            </ul>
+
+            <h3>Positioning the paddles</h3>
+            <p>So first things first, let's position 'em.'</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">-</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">input</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">-</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>We simply set the position according to the game input, furthermore, we substract the half of the height of the paddle from the number, so that our cursor is vertically in the middle of the paddle.</p>
+
+            <h3>Paddle-ball collision</h3>
+            <p>So now we want to make the ball collide with the paddles, right? So let's do just that!</p>
+
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle1</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">collide</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">);</span>
+<span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">paddle2</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">collide</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">ball</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">body</span><span style="color: #f8f8f2">);</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+            <p>And just like that we achieved the very thing we desired to achieve, this concludes our tutorial and you should now understand how the Pong example works.</p>
+        </article>
+    </div>
+
+    <footer>
+        <a href="http://petyrek.github.io/">© 2016 Martin Petýrek</a>
+    </footer>
+
+    <script src="/lib/jquery/jquery-2.2.0.min.js"></script>
+    <script src="/dist/main.js"></script>
+</body>
+</html>

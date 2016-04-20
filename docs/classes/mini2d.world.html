@@ -78,6 +78,12 @@
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/mini2d.destroyable.html" class="tsd-signature-type">Destroyable</a></li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -93,14 +99,16 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="mini2d.world.html#game" class="tsd-kind-icon">game</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.world.html#gravity" class="tsd-kind-icon">gravity</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="mini2d.world.html#sprites" class="tsd-kind-icon">sprites</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.world.html#physicsengine" class="tsd-kind-icon">physics<wbr>Engine</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.world.html#sprites" class="tsd-kind-icon">sprites</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.world.html#addsprite" class="tsd-kind-icon">add<wbr>Sprite</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.world.html#handlecollisions" class="tsd-kind-icon">handle<wbr>Collisions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.world.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.world.html#removesprite" class="tsd-kind-icon">remove<wbr>Sprite</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.world.html#render" class="tsd-kind-icon">render</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.world.html#update" class="tsd-kind-icon">update</a></li>
 							</ul>
@@ -120,7 +128,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/world.ts:18</li>
+									<li>Defined in core/world.ts:20</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -164,7 +172,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="gravity" class="tsd-anchor"></a>
 					<h3>gravity</h3>
-					<div class="tsd-signature tsd-kind-icon">gravity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">gravity<span class="tsd-signature-symbol">:</span> <a href="mini2d.point.html" class="tsd-signature-type">Point</a></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in core/world.ts:8</li>
@@ -176,9 +184,19 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="physicsengine" class="tsd-anchor"></a>
+					<h3>physics<wbr>Engine</h3>
+					<div class="tsd-signature tsd-kind-icon">physics<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="mini2d.collisionengine.html" class="tsd-signature-type">CollisionEngine</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in core/world.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="sprites" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> sprites</h3>
+					<h3>sprites</h3>
 					<div class="tsd-signature tsd-kind-icon">sprites<span class="tsd-signature-symbol">:</span> <a href="mini2d.sprite.html" class="tsd-signature-type">Sprite</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
@@ -204,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/world.ts:52</li>
+									<li>Defined in core/world.ts:56</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -234,24 +252,53 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handlecollisions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Collisions</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Collisions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/mini2d.destroyable.html">Destroyable</a>.<a href="../interfaces/mini2d.destroyable.html#destroy">destroy</a></p>
+								<ul>
+									<li>Defined in core/world.ts:80</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Nullyfies the references and prepares the objects to be garbage collected</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removesprite" class="tsd-anchor"></a>
+					<h3>remove<wbr>Sprite</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Sprite<span class="tsd-signature-symbol">(</span>sprite<span class="tsd-signature-symbol">: </span><a href="mini2d.sprite.html" class="tsd-signature-type">Sprite</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/world.ts:63</li>
+									<li>Defined in core/world.ts:69</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Handles the collisions of world objects with body enabled</p>
+									<p>Adds a sprite to the world</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sprite: <a href="mini2d.sprite.html" class="tsd-signature-type">Sprite</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -266,7 +313,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/world.ts:41</li>
+									<li>Defined in core/world.ts:45</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,13 +329,13 @@
 					<a name="update" class="tsd-anchor"></a>
 					<h3>update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>delta<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in core/world.ts:31</li>
+									<li>Defined in core/world.ts:34</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -296,6 +343,12 @@
 									<p>Updates all the word objects and handles collisions</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>delta: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -328,6 +381,15 @@
 						<a href="mini2d.camera.html" class="tsd-kind-icon">Camera</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisiondetector.html" class="tsd-kind-icon">Collision<wbr>Detector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionengine.html" class="tsd-kind-icon">Collision<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionsolver.html" class="tsd-kind-icon">Collision<wbr>Solver</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.debug.html" class="tsd-kind-icon">Debug</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -355,6 +417,9 @@
 						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.stateprefab.html" class="tsd-kind-icon">State<wbr>Prefab</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -374,14 +439,20 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.world.html#gravity" class="tsd-kind-icon">gravity</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.world.html#physicsengine" class="tsd-kind-icon">physics<wbr>Engine</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.world.html#sprites" class="tsd-kind-icon">sprites</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.world.html#addsprite" class="tsd-kind-icon">add<wbr>Sprite</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="mini2d.world.html#handlecollisions" class="tsd-kind-icon">handle<wbr>Collisions</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.world.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.world.html#removesprite" class="tsd-kind-icon">remove<wbr>Sprite</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.world.html#render" class="tsd-kind-icon">render</a>

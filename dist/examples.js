@@ -1,3 +1,5 @@
+'use strict';
+
 $(function () {
   init();
 });
@@ -9,7 +11,7 @@ var examples = {
   'Games': ['pong', 'breakout', 'doodlejump']
 };
 
-var init = function () {
+var init = function init() {
   // for every file in every category, create a button to load up the code
   for (var category in examples) {
 
@@ -30,7 +32,7 @@ var init = function () {
       btn.fileName = files[i];
       btn.onclick = function () {
         loadScript(this.fileName);
-      }
+      };
       $(col).append(btn);
     }
     $('#example-list').append(col);
@@ -44,25 +46,24 @@ var init = function () {
     $('canvas').remove();
     eval(editor.getValue());
   });
-  $('#hide').on('click', function(e) {
-    if($(this).text() == 'hide code'){
-      $(this).text('show code')
-    }
-    else{
-      $(this).text('hide code')
+  $('#hide').on('click', function (e) {
+    if ($(undefined).text() == 'hide code') {
+      $(undefined).text('show code');
+    } else {
+      $(undefined).text('hide code');
     }
     $('#code').toggle(300);
   });
-}
+};
 
-var loadScript = function (name) {
+var loadScript = function loadScript(name) {
   $.ajax({
     url: "./examples/" + name,
-    success: function (data) {
+    success: function success(data) {
       editor.setValue(data);
       editor.gotoLine(0);
       editor.scrollToLine(0);
       editor.focus();
     }
   });
-}
+};

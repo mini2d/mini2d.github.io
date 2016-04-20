@@ -98,14 +98,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#bounce" class="tsd-kind-icon">bounce</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#checkcollision" class="tsd-kind-icon">check<wbr>Collision</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#acceleration" class="tsd-kind-icon">acceleration</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#checkworldcollision" class="tsd-kind-icon">check<wbr>World<wbr>Collision</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="mini2d.body.html#game" class="tsd-kind-icon">game</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#halfheight" class="tsd-kind-icon">half<wbr>Height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#halfwidth" class="tsd-kind-icon">half<wbr>Width</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#height" class="tsd-kind-icon">height</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#immovable" class="tsd-kind-icon">immovable</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#position" class="tsd-kind-icon">position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#previousposition" class="tsd-kind-icon">previous<wbr>Position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#restitution" class="tsd-kind-icon">restitution</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#velocity" class="tsd-kind-icon">velocity</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#width" class="tsd-kind-icon">width</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.body.html#worldcollisioncallback" class="tsd-kind-icon">world<wbr>Collision<wbr>Callback</a></li>
@@ -114,12 +115,15 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#collide" class="tsd-kind-icon">collide</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#collideworldbounds" class="tsd-kind-icon">collide<wbr>World<wbr>Bounds</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#destroy" class="tsd-kind-icon">destroy</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#handlecollision" class="tsd-kind-icon">handle<wbr>Collision</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.body.html#handleworldcollision" class="tsd-kind-icon">handle<wbr>World<wbr>Collision</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="mini2d.body.html#resolutecollision" class="tsd-kind-icon">resolute<wbr>Collision</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#getbottom" class="tsd-kind-icon">get<wbr>Bottom</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#getleft" class="tsd-kind-icon">get<wbr>Left</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#getmidx" class="tsd-kind-icon">get<wbr>MidX</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#getmidy" class="tsd-kind-icon">get<wbr>MidY</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#getright" class="tsd-kind-icon">get<wbr>Right</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.body.html#gettop" class="tsd-kind-icon">get<wbr>Top</a></li>
 							</ul>
 						</section>
 					</div>
@@ -137,7 +141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:59</li>
+									<li>Defined in physics/body.ts:66</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -149,6 +153,11 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>sprite: <a href="mini2d.sprite.html" class="tsd-signature-type">Sprite</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The sprite on which this body is based</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="mini2d.body.html" class="tsd-signature-type">Body</a></h4>
@@ -159,32 +168,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="bounce" class="tsd-anchor"></a>
-					<h3>bounce</h3>
-					<div class="tsd-signature tsd-kind-icon">bounce<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="acceleration" class="tsd-anchor"></a>
+					<h3>acceleration</h3>
+					<div class="tsd-signature tsd-kind-icon">acceleration<span class="tsd-signature-symbol">:</span> <a href="mini2d.point.html" class="tsd-signature-type">Point</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:33</li>
+							<li>Defined in physics/body.ts:45</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The bounce quocient [0-1]</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="checkcollision" class="tsd-anchor"></a>
-					<h3>check<wbr>Collision</h3>
-					<div class="tsd-signature tsd-kind-icon">check<wbr>Collision<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mini2d.collisiondirection.html" class="tsd-signature-type">CollisionDirection</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in physics/body.ts:54</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Specifies from which directions to handle collisions with other objects</p>
+							<p>The acceleration of the body</p>
 						</div>
 					</div>
 				</section>
@@ -194,12 +188,12 @@
 					<div class="tsd-signature tsd-kind-icon">check<wbr>World<wbr>Collision<span class="tsd-signature-symbol">:</span> <a href="../interfaces/mini2d.collisiondirection.html" class="tsd-signature-type">CollisionDirection</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:43</li>
+							<li>Defined in physics/body.ts:50</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Specifies from which directions to handle collisions with the world</p>
+							<p>Determines the directions from which to check for a world collision</p>
 						</div>
 					</div>
 				</section>
@@ -209,12 +203,42 @@
 					<div class="tsd-signature tsd-kind-icon">game<span class="tsd-signature-symbol">:</span> <a href="mini2d.game.html" class="tsd-signature-type">Game</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:59</li>
+							<li>Defined in physics/body.ts:66</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Reference to the game instance</p>
+							<p>A reference to the game instance</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="halfheight" class="tsd-anchor"></a>
+					<h3>half<wbr>Height</h3>
+					<div class="tsd-signature tsd-kind-icon">half<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in physics/body.ts:25</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Half of the height for easier calculations</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="halfwidth" class="tsd-anchor"></a>
+					<h3>half<wbr>Width</h3>
+					<div class="tsd-signature tsd-kind-icon">half<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in physics/body.ts:20</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Half of the width for easier calculations</p>
 						</div>
 					</div>
 				</section>
@@ -225,12 +249,12 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/mini2d.measurable.html">Measurable</a>.<a href="../interfaces/mini2d.measurable.html#height">height</a></p>
 						<ul>
-							<li>Defined in physics/body.ts:23</li>
+							<li>Defined in physics/body.ts:15</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The height of the object</p>
+							<p>The height of the body</p>
 						</div>
 					</div>
 				</section>
@@ -240,12 +264,12 @@
 					<div class="tsd-signature tsd-kind-icon">immovable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:38</li>
+							<li>Defined in physics/body.ts:61</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>If true, it isn&#39;t affected by collision with other objects</p>
+							<p>Determines that an object should not be moved with upon collision</p>
 						</div>
 					</div>
 				</section>
@@ -256,27 +280,27 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/mini2d.measurable.html">Measurable</a>.<a href="../interfaces/mini2d.measurable.html#position">position</a></p>
 						<ul>
-							<li>Defined in physics/body.ts:8</li>
+							<li>Defined in physics/body.ts:35</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The position of the object</p>
+							<p>The current position of the body</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="previousposition" class="tsd-anchor"></a>
-					<h3>previous<wbr>Position</h3>
-					<div class="tsd-signature tsd-kind-icon">previous<wbr>Position<span class="tsd-signature-symbol">:</span> <a href="mini2d.point.html" class="tsd-signature-type">Point</a></div>
+					<a name="restitution" class="tsd-anchor"></a>
+					<h3>restitution</h3>
+					<div class="tsd-signature tsd-kind-icon">restitution<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:13</li>
+							<li>Defined in physics/body.ts:30</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The previous position of the object</p>
+							<p>Number in the range of 0-1 reflecting how much the body bounces</p>
 						</div>
 					</div>
 				</section>
@@ -286,12 +310,12 @@
 					<div class="tsd-signature tsd-kind-icon">velocity<span class="tsd-signature-symbol">:</span> <a href="mini2d.point.html" class="tsd-signature-type">Point</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:28</li>
+							<li>Defined in physics/body.ts:40</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The velocity of the object</p>
+							<p>The current velocity of the body</p>
 						</div>
 					</div>
 				</section>
@@ -302,12 +326,12 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/mini2d.measurable.html">Measurable</a>.<a href="../interfaces/mini2d.measurable.html#width">width</a></p>
 						<ul>
-							<li>Defined in physics/body.ts:18</li>
+							<li>Defined in physics/body.ts:10</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The width of the object</p>
+							<p>The width of the body</p>
 						</div>
 					</div>
 				</section>
@@ -317,16 +341,16 @@
 					<div class="tsd-signature tsd-kind-icon">world<wbr>Collision<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in physics/body.ts:49</li>
+							<li>Defined in physics/body.ts:56</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The callback function to be called upon colliding with the world</p>
+							<p>The callback called upon the collision with the world</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>param</dt>
-							<dd><p>Specifies which world bound was collided: Top, Bottom, Left, Right</p>
+							<dd><p>The string that marks the collision side, e.g. &quot;top&quot;, &quot;left&quot;</p>
 							</dd>
 						</dl>
 					</div>
@@ -356,6 +380,61 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="collide" class="tsd-anchor"></a>
+					<h3>collide</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">collide<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="mini2d.body.html" class="tsd-signature-type">Body</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, resolveCollision<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in physics/body.ts:135</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks for collision with the other body and calls callback upon collision</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>body: <a href="mini2d.body.html" class="tsd-signature-type">Body</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The other body to be checked for collision with</p>
+									</div>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function that gets called upon colliding with the body</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> resolveCollision: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Marks whether collision should be resolved with the physics engine</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="collideworldbounds" class="tsd-anchor"></a>
 					<h3>collide<wbr>World<wbr>Bounds</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -365,12 +444,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:102</li>
+									<li>Defined in physics/body.ts:155</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Function to enable collision with world bounds</p>
+									<p>Enables the collision with the world bound upon calling</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -378,7 +457,7 @@
 								<li>
 									<h5>callback: <span class="tsd-signature-type">function</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a function with the direction parameter which specifies which world bound was collided: Top, Bottom, Left, Right</p>
+										<p>The function that gets called when collision with world occurs, taking the first parameter a direction e.g. &quot;left&quot;</p>
 									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
@@ -415,7 +494,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/mini2d.destroyable.html">Destroyable</a>.<a href="../interfaces/mini2d.destroyable.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in physics/body.ts:129</li>
+									<li>Defined in physics/body.ts:126</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -428,105 +507,134 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="handlecollision" class="tsd-anchor"></a>
-					<h3>handle<wbr>Collision</h3>
+					<a name="getbottom" class="tsd-anchor"></a>
+					<h3>get<wbr>Bottom</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Collision<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="mini2d.body.html" class="tsd-signature-type">Body</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Bottom<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:116</li>
+									<li>Defined in physics/body.ts:119</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Handle the collision with another body</p>
+									<p>Returns the Y coordinate of the bottom of the body</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>body: <a href="mini2d.body.html" class="tsd-signature-type">Body</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handleworldcollision" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>World<wbr>Collision</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>World<wbr>Collision<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in physics/body.ts:197</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Handles the physics for collision with the world bounds</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="resolutecollision" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> resolute<wbr>Collision</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">resolute<wbr>Collision<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><a href="mini2d.body.html" class="tsd-signature-type">Body</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in physics/body.ts:147</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Changes the velocities, positions etc. based on the collision with another body</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>body: <a href="mini2d.body.html" class="tsd-signature-type">Body</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the other body that has been detected to be colliding with this one</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="update" class="tsd-anchor"></a>
-					<h3>update</h3>
+					<a name="getleft" class="tsd-anchor"></a>
+					<h3>get<wbr>Left</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Left<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in physics/body.ts:88</li>
+									<li>Defined in physics/body.ts:105</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Updates the body</p>
+									<p>Returns the X coordinate of the left of the body</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmidx" class="tsd-anchor"></a>
+					<h3>get<wbr>MidX</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>MidX<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in physics/body.ts:84</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the X coordinate of the center of the body</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmidy" class="tsd-anchor"></a>
+					<h3>get<wbr>MidY</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>MidY<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in physics/body.ts:91</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the Y coordinate of the center of the body</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getright" class="tsd-anchor"></a>
+					<h3>get<wbr>Right</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Right<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in physics/body.ts:112</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the X coordinate of the right of the body</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettop" class="tsd-anchor"></a>
+					<h3>get<wbr>Top</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Top<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in physics/body.ts:98</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the Y coordinate of the top of the body</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -557,16 +665,19 @@
 								<a href="mini2d.body.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.body.html#bounce" class="tsd-kind-icon">bounce</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.body.html#checkcollision" class="tsd-kind-icon">check<wbr>Collision</a>
+								<a href="mini2d.body.html#acceleration" class="tsd-kind-icon">acceleration</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.body.html#checkworldcollision" class="tsd-kind-icon">check<wbr>World<wbr>Collision</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="mini2d.body.html#game" class="tsd-kind-icon">game</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.body.html#halfheight" class="tsd-kind-icon">half<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.body.html#halfwidth" class="tsd-kind-icon">half<wbr>Width</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.body.html#height" class="tsd-kind-icon">height</a>
@@ -578,7 +689,7 @@
 								<a href="mini2d.body.html#position" class="tsd-kind-icon">position</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="mini2d.body.html#previousposition" class="tsd-kind-icon">previous<wbr>Position</a>
+								<a href="mini2d.body.html#restitution" class="tsd-kind-icon">restitution</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.body.html#velocity" class="tsd-kind-icon">velocity</a>
@@ -590,22 +701,31 @@
 								<a href="mini2d.body.html#worldcollisioncallback" class="tsd-kind-icon">world<wbr>Collision<wbr>Callback</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#collide" class="tsd-kind-icon">collide</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.body.html#collideworldbounds" class="tsd-kind-icon">collide<wbr>World<wbr>Bounds</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.body.html#destroy" class="tsd-kind-icon">destroy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="mini2d.body.html#handlecollision" class="tsd-kind-icon">handle<wbr>Collision</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="mini2d.body.html#handleworldcollision" class="tsd-kind-icon">handle<wbr>World<wbr>Collision</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="mini2d.body.html#resolutecollision" class="tsd-kind-icon">resolute<wbr>Collision</a>
+								<a href="mini2d.body.html#getbottom" class="tsd-kind-icon">get<wbr>Bottom</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="mini2d.body.html#update" class="tsd-kind-icon">update</a>
+								<a href="mini2d.body.html#getleft" class="tsd-kind-icon">get<wbr>Left</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#getmidx" class="tsd-kind-icon">get<wbr>MidX</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#getmidy" class="tsd-kind-icon">get<wbr>MidY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#getright" class="tsd-kind-icon">get<wbr>Right</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.body.html#gettop" class="tsd-kind-icon">get<wbr>Top</a>
 							</li>
 						</ul>
 					</li>
@@ -616,6 +736,15 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.camera.html" class="tsd-kind-icon">Camera</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisiondetector.html" class="tsd-kind-icon">Collision<wbr>Detector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionengine.html" class="tsd-kind-icon">Collision<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionsolver.html" class="tsd-kind-icon">Collision<wbr>Solver</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.debug.html" class="tsd-kind-icon">Debug</a>
@@ -643,6 +772,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.stateprefab.html" class="tsd-kind-icon">State<wbr>Prefab</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>

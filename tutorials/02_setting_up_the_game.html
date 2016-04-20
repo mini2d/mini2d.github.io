@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Martin Petýrek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="/dist/style.css">
+    <title>Tutorials</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="brand">mini<span>2d</span></a>
+        <nav>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="/examples.html">Examples</a>
+            <a href="/docs/modules/mini2d.html">Documentation</a>
+        </nav>
+    </header>
+    <div class="container narrow">
+        <article class="markdown">
+            <a href="/tutorials.html">< Back to tutorials</a>
+            <h1>Setting up the game</h1>
+            <p>Once your webserver is installed and running, you are going to want to create a folder inside the htdocs folder as written in the XAMP/WAMP documentation. Let’s call it “example” for instance.</p>
+            <h2>Writing your index.html file</h2>
+            <p>Next up, navigate inside this folder and create index.html and paste there the following code.</p>
+
+<!-- HTML generated using hilite.me -->
+<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
+<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">&lt;!doctype html&gt;</span>
+<span style="color: #f92672">&lt;html&gt;</span>
+    <span style="color: #f92672">&lt;head&gt;</span>
+        <span style="color: #f92672">&lt;meta</span> <span style="color: #a6e22e">charset=</span><span style="color: #e6db74">&quot;utf-8&quot;</span><span style="color: #f92672">&gt;</span>
+        <span style="color: #f92672">&lt;meta</span> <span style="color: #a6e22e">name=</span><span style="color: #e6db74">&quot;viewport&quot;</span> <span style="color: #a6e22e">content=</span><span style="color: #e6db74">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span> <span style="color: #f92672">/&gt;</span>
+        <span style="color: #f92672">&lt;title&gt;</span>Example<span style="color: #f92672">&lt;/title&gt;</span>
+    <span style="color: #f92672">&lt;/head&gt;</span>
+    <span style="color: #f92672">&lt;body&gt;</span>
+        <span style="color: #f92672">&lt;script </span><span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;mini2d.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
+    <span style="color: #f92672">&lt;/body&gt;</span>
+<span style="color: #f92672">&lt;/html&gt;</span>
+</pre></div>
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+<!-- HTML generated using hilite.me -->
+
+
+                <p>This is just a basic skeleton for your HTML page. There is not much more to it though.</p>
+
+                <h2>Create a file for your game source code</h2>
+                <p>The next thing you are going to want to do, is to create a JavaScript file inside your `example` folder.
+                    <br>Let's call the file game.js.
+                </p>
+
+                <h2>Link the file in your index.html</h2>
+                <p>To link the JavaScript file to your page you have to add this line below the mini2d.js script tag in the index.html file.</p>
+                <pre><code class="language-sh">&lt;script src=<span class="hljs-string">"mygame.js"</span>&gt;&lt;/script&gt;
+                </code></pre>
+
+                <p>And thats it! You are ready to start developing your game.<p>
+                <a href="../tutorials/03_writing_test_code.html">next chapter: Writing test code ></a>
+            </article>
+        </div>
+
+        <footer>
+            <a href="http://petyrek.github.io/">© 2016 Martin Petýrek</a>
+        </footer>
+
+        <script src="/lib/jquery/jquery-2.2.0.min.js"></script>
+        <script src="/dist/main.js"></script>
+    </body>
+    </html>

@@ -158,60 +158,9 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-.markdown pre {
-  font-size: 1rem;
-  padding: .66001rem 9.5px 9.5px;
-  line-height: 2rem;
-  background: -webkit-linear-gradient(top, #fff 0, #fff 0rem, #f5f7fa 0rem, #f5f7fa 2rem, #fff 2rem, #fff 4rem);
-  background: linear-gradient(to bottom, #fff 0, #fff 0rem, #f5f7fa 0rem, #f5f7fa 2rem, #fff 2rem, #fff 4rem);
-  background-size: 100% 4rem;
-  border-color: #D3DAEA;
-  overflow: auto;
-  display: block;
-  margin: 0 0 10px;
-  word-break: break-all;
-  word-wrap: break-word;
-  color: #333;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.markdown code {
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-  white-space: pre-wrap;
-  background-color: transparent;
-  border-radius: 0;
-}
-.markdown code .hljs-number,
-.markdown code .hljs-command,
-.markdown code .hljs-string,
-.markdown code .hljs-tag .hljs-value,
-.markdown code .hljs-rules .hljs-value,
-.markdown code .hljs-phpdoc,
-.markdown code .hljs-dartdoc,
-.markdown code .tex .hljs-formula,
-.markdown code .hljs-regexp,
-.markdown code .hljs-hexcolor,
-.markdown code .hljs-link_url {
-  color: #2aa198;
-}
-.markdown code .hljs-title,
-.markdown code .hljs-localvars,
-.markdown code .hljs-chunk,
-.markdown code .hljs-decorator,
-.markdown code .hljs-built_in,
-.markdown code .hljs-identifier,
-.markdown code .vhdl .hljs-literal,
-.markdown code .hljs-id,
-.markdown code .css .hljs-function {
-  color: #268bd2;
-}
 html {
+  min-height: 100%;
   position: relative;
-  padding-bottom: 35px;
 }
 body,
 html {
@@ -219,7 +168,6 @@ html {
   background: #f4f4f4;
   font-family: 'Open Sans', sans-serif;
   color: #333;
-  min-height: 100%;
 }
 canvas {
   background: #fff;

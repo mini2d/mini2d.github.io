@@ -91,14 +91,24 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#gainnode" class="tsd-kind-icon">gain<wbr>Node</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#game" class="tsd-kind-icon">game</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#isplaying" class="tsd-kind-icon">is<wbr>Playing</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#pausedtime" class="tsd-kind-icon">paused<wbr>Time</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#startedtime" class="tsd-kind-icon">started<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mini2d.sound.html#volume" class="tsd-kind-icon">volume</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.sound.html#pause" class="tsd-kind-icon">pause</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.sound.html#play" class="tsd-kind-icon">play</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.sound.html#resume" class="tsd-kind-icon">resume</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.sound.html#setvolume" class="tsd-kind-icon">set<wbr>Volume</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mini2d.sound.html#stop" class="tsd-kind-icon">stop</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,7 +126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in audio/sound.ts:12</li>
+									<li>Defined in audio/sound.ts:43</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -146,12 +156,27 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="gainnode" class="tsd-anchor"></a>
+					<h3>gain<wbr>Node</h3>
+					<div class="tsd-signature tsd-kind-icon">gain<wbr>Node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">GainNode</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:18</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Gain node, which enables to controll the audio volume</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="game" class="tsd-anchor"></a>
 					<h3>game</h3>
 					<div class="tsd-signature tsd-kind-icon">game<span class="tsd-signature-symbol">:</span> <a href="mini2d.game.html" class="tsd-signature-type">Game</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in audio/sound.ts:7</li>
+							<li>Defined in audio/sound.ts:8</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -161,12 +186,57 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isplaying" class="tsd-anchor"></a>
+					<h3>is<wbr>Playing</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Playing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:38</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A flag marking whether the sounds is playing or not</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="path" class="tsd-anchor"></a>
+					<h3>path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:23</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Path to the audio file</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="pausedtime" class="tsd-anchor"></a>
+					<h3>paused<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">paused<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:33</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represent the time at which the sound has been paused</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="source" class="tsd-anchor"></a>
 					<h3>source</h3>
 					<div class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AudioBufferSourceNode</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in audio/sound.ts:12</li>
+							<li>Defined in audio/sound.ts:13</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -175,25 +245,158 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="startedtime" class="tsd-anchor"></a>
+					<h3>started<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">started<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:28</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents the time at which the sound has started playing</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="volume" class="tsd-anchor"></a>
+					<h3>volume</h3>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in audio/sound.ts:43</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A value in the range of 0-1 controlling the volume</p>
+						</div>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="play" class="tsd-anchor"></a>
-					<h3>play</h3>
+					<a name="pause" class="tsd-anchor"></a>
+					<h3>pause</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in audio/sound.ts:30</li>
+									<li>Defined in audio/sound.ts:108</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Pauses the sound</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="play" class="tsd-anchor"></a>
+					<h3>play</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">play<span class="tsd-signature-symbol">(</span>offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in audio/sound.ts:60</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Plays the sound</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of milliseconds which the sound playback should start from</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="resume" class="tsd-anchor"></a>
+					<h3>resume</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">resume<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in audio/sound.ts:99</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Resumes the sound</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setvolume" class="tsd-anchor"></a>
+					<h3>set<wbr>Volume</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Volume<span class="tsd-signature-symbol">(</span>volume<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in audio/sound.ts:79</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the volume of the sound</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>volume: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="stop" class="tsd-anchor"></a>
+					<h3>stop</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stop<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in audio/sound.ts:91</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stops the sound</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -228,6 +431,15 @@
 						<a href="mini2d.camera.html" class="tsd-kind-icon">Camera</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisiondetector.html" class="tsd-kind-icon">Collision<wbr>Detector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionengine.html" class="tsd-kind-icon">Collision<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.collisionsolver.html" class="tsd-kind-icon">Collision<wbr>Solver</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.debug.html" class="tsd-kind-icon">Debug</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -251,13 +463,43 @@
 								<a href="mini2d.sound.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#gainnode" class="tsd-kind-icon">gain<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.sound.html#game" class="tsd-kind-icon">game</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#isplaying" class="tsd-kind-icon">is<wbr>Playing</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#path" class="tsd-kind-icon">path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#pausedtime" class="tsd-kind-icon">paused<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="mini2d.sound.html#source" class="tsd-kind-icon">source</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#startedtime" class="tsd-kind-icon">started<wbr>Time</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mini2d.sound.html#volume" class="tsd-kind-icon">volume</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.sound.html#pause" class="tsd-kind-icon">pause</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="mini2d.sound.html#play" class="tsd-kind-icon">play</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.sound.html#resume" class="tsd-kind-icon">resume</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.sound.html#setvolume" class="tsd-kind-icon">set<wbr>Volume</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mini2d.sound.html#stop" class="tsd-kind-icon">stop</a>
 							</li>
 						</ul>
 					</li>
@@ -271,6 +513,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.statemanager.html" class="tsd-kind-icon">State<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="mini2d.stateprefab.html" class="tsd-kind-icon">State<wbr>Prefab</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="mini2d.text.html" class="tsd-kind-icon">Text</a>
