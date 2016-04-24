@@ -1,6 +1,8 @@
-var game = new mini2d.Game(600, 480);
+var game = new mini2d.Game(800, 450);
 var state = game.addState({
    init: function(){
+       this.addSprite(0, 0, 'assets/bg.png');
+
        var self = this;
        this.debug.add(function () {
            return 'cursor position x: ' + game.input.x + ' y: ' + game.input.y;
@@ -10,4 +12,5 @@ var state = game.addState({
        });
    }
 });
-state.start();
+
+game.load(['assets/bg.png'], state);

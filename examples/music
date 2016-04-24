@@ -1,26 +1,34 @@
-var game = new mini2d.Game(600, 480);
+var game = new mini2d.Game(800, 450);
 var state = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg.png');
+
         var sound = game.addSound('assets/music.mp3');
-        this.addButton(50, 50, function () {
+
+        this.addButton(50, 100, function () {
             sound.play();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('PLAY', '15px sans-serif', '#fff');
-        this.addButton(50, 100, function () {
-            sound.setVolume(0.2);
-        }, 'assets/btn.png', 'assets/btn-active.png').addText('low volume', '15px sans-serif', '#fff');
-        this.addButton(150, 100, function () {
-            sound.setVolume(1);
-        }, 'assets/btn.png', 'assets/btn-active.png').addText('high volume', '15px sans-serif', '#fff');
-        this.addButton(150, 50, function () {
+
+        this.addButton(225, 100, function () {
             sound.pause();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('PAUSE', '15px sans-serif', '#fff');
-        this.addButton(250, 50, function () {
+
+        this.addButton(400, 100, function () {
             sound.resume();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('RESUME', '15px sans-serif', '#fff');
-        this.addButton(350, 50, function () {
+
+        this.addButton(575, 100, function () {
             sound.stop();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('STOP', '15px sans-serif', '#fff');
+
+        this.addButton(50, 175, function () {
+            sound.setVolume(0.2);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('low volume', '15px sans-serif', '#fff');
+
+        this.addButton(225, 175, function () {
+            sound.setVolume(1);
+        }, 'assets/btn.png', 'assets/btn-active.png').addText('high volume', '15px sans-serif', '#fff');
     }
 });
 
-game.load(['assets/btn.png', 'assets/btn-active.png', 'assets/music.mp3'], state);
+game.load(['assets/bg.png', 'assets/btn.png', 'assets/btn-active.png', 'assets/music.mp3'], state);

@@ -1,6 +1,8 @@
-var game = new mini2d.Game(600, 480);
+var game = new mini2d.Game(800, 450);
 var menuState = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg.png');
+
         var btn = this.addButton(0, 0, function () {
             gameState.start();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('START', '15px sans-serif', '#fff');
@@ -10,13 +12,15 @@ var menuState = game.addState({
 });
 var gameState = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg.png');
+
         game.paddle1 = this.addSprite(50, 50, 'assets/paddle.png');
         game.paddle1.enableBody();
         game.paddle1.body.collideWorldBounds();
         game.paddle1.body.immovable = true;
         game.paddle1.body.checkCollision = {top: false, bottom: false, left: false, right: true};
 
-        game.paddle2 = this.addSprite(500, 50, 'assets/paddle.png');
+        game.paddle2 = this.addSprite(700, 50, 'assets/paddle.png');
         game.paddle2.enableBody();
         game.paddle2.body.collideWorldBounds();
         game.paddle2.body.immovable = true;
@@ -30,21 +34,21 @@ var gameState = game.addState({
         game.ball.body.collideWorldBounds(function(direction){
             if(direction == 'left'){
                 game.player2points += 1;
-                game.player2score.text = "Player 2 score: " + game.player2points;
+                game.player2score.text = "score: " + game.player2points;
                 game.ball.body.position.x = game.width / 2;
                 game.ball.body.position.y = game.height / 2;
             }
             else if(direction == 'right'){
                 game.player1points += 1;
-                game.player1score.text = "Player 1 score: " + game.player1points;
+                game.player1score.text = "score: " + game.player1points;
                 game.ball.body.position.x = game.width / 2;
                 game.ball.body.position.y = game.height / 2;
             }
         });
         game.player1points = 0;
         game.player2points = 0;
-        game.player1score = this.addText(0, 10, 'Player 1 score: 0', '15px sans-serif', '#000');
-        game.player2score = this.addText(450, 10, 'Player 2 score: 0', '15px sans-serif', '#000');
+        game.player1score = this.addText(20, 15, 'score: 0', '20px sans-serif', '#fff');
+        game.player2score = this.addText(700, 15, 'score: 0', '20px sans-serif', '#fff');
     },
     update: function(){
         game.paddle1.body.position.y = game.input.y - game.paddle1.body.height / 2;
@@ -55,4 +59,4 @@ var gameState = game.addState({
     }
 });
 
-game.load(['assets/paddle.png', 'assets/ball.png', 'assets/btn.png', 'assets/btn-active.png'], menuState);
+game.load(['assets/bg.png','assets/paddle.png', 'assets/ball.png', 'assets/btn.png', 'assets/btn-active.png'], menuState);

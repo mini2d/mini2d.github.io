@@ -1,6 +1,7 @@
-var game = new mini2d.Game(600, 480);
+var game = new mini2d.Game(800, 450);
 var state = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg.png');
 
         var sprite1 = this.addSprite(100, 350, 'assets/ball.png');
         sprite1.enableBody();
@@ -24,4 +25,4 @@ var state = game.addState({
     }
 });
 
-game.load(['assets/ball.png'], state);
+game.load(['assets/bg.png', 'assets/ball.png'], state);

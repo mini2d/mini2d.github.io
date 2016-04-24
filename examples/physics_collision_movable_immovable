@@ -1,15 +1,17 @@
-var game = new mini2d.Game(400, 150);
+var game = new mini2d.Game(800, 450);
 var state = game.addState({
     init: function(){
-        game.sprite1 = this.addSprite(50, 50, 'assets/logo.png');
+        this.addSprite(0, 0, 'assets/bg.png');
+
+        game.sprite1 = this.addSprite(50, 150, 'assets/brick.png');
         game.sprite1.enableBody();
         game.sprite1.body.immovable = true;
 
-        game.sprite2 = this.addSprite(300, 50, 'assets/logo.png');
+        game.sprite2 = this.addSprite(300, 150, 'assets/brick.png');
         game.sprite2.enableBody();
         game.sprite2.body.immovable = false;
 
-        game.sprite3 = this.addSprite(200, 50, 'assets/ball.png');
+        game.sprite3 = this.addSprite(200, 150, 'assets/ball.png');
         game.sprite3.enableBody();
         game.sprite3.body.velocity.x = -400;
         game.sprite3.body.bounce = 1;
@@ -21,4 +23,4 @@ var state = game.addState({
     }
 });
 
-game.load(['assets/logo.png', 'assets/ball.png'], state);
+game.load(['assets/bg.png', 'assets/brick.png', 'assets/ball.png'], state);

@@ -1,6 +1,8 @@
 var game = new mini2d.Game(450, 800);
 var gameState = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg-portrait.png');
+
         game.paddle = this.addSprite(175, 700, 'assets/btn.png');
         game.paddle.enableBody();
         game.paddle.body.collideWorldBounds();
@@ -16,7 +18,7 @@ var gameState = game.addState({
         game.blocks = [];
         for (var i = 0; i < 4; i++){
             for (var j = 0; j < 3; j++){
-                var block = this.addSprite(50 + i * 100, 50 + j * 100, 'assets/logo.png');
+                var block = this.addSprite(50 + i * 100, 150 + j * 100, 'assets/brick.png');
                 block.enableBody();
                 block.body.immovable = true;
                 game.blocks.push(block);
@@ -56,7 +58,9 @@ var gameState = game.addState({
 
 var wonState = game.addState({
     init: function(){
-        var txt = this.addText(100, 100, 'you won!');
+        this.addSprite(0, 0, 'assets/bg-portrait.png');
+
+        var txt = this.addText(170, 200, 'YOU WON!', '20px sans-serif', '#fff');
         var btn = this.addButton(0, 0, function () {
             gameState.start();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('RESTART', '15px sans-serif', '#fff');
@@ -67,7 +71,9 @@ var wonState = game.addState({
 
 var lostState = game.addState({
     init: function(){
-        var txt = this.addText(100, 100, 'you lost!');
+        this.addSprite(0, 0, 'assets/bg-portrait.png');
+
+        var txt = this.addText(170, 200, 'YOU LOST!', '20px sans-serif', '#fff');
         var btn = this.addButton(0, 0, function () {
             gameState.start();
         }, 'assets/btn.png', 'assets/btn-active.png').addText('RESTART', '15px sans-serif', '#fff');
@@ -76,4 +82,4 @@ var lostState = game.addState({
     },
 });
 
-game.load(['assets/ball.png', 'assets/btn.png', 'assets/btn-active.png', 'assets/logo.png'], gameState);
+game.load(['assets/bg-portrait.png', 'assets/ball.png', 'assets/btn.png', 'assets/btn-active.png', 'assets/brick.png'], gameState);

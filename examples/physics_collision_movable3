@@ -1,11 +1,13 @@
-var game = new mini2d.Game(600, 250);
+var game = new mini2d.Game(800, 450);
 var state = game.addState({
     init: function(){
+        this.addSprite(0, 0, 'assets/bg.png');
+
         game.sprites = [];
 
         for(var i = 0, j = 50; i < 10; i++){
             if(i !== 1 && i !== 8){
-                var sprite = this.addSprite(j, i % 2 === 0? 50 : 150, 'assets/logo.png');
+                var sprite = this.addSprite(j, i % 2 === 0? 50 : 150, 'assets/brick.png');
                 sprite.enableBody();
                 sprite.body.velocity.x = 50 * (i % 2 === 0? 1 : -1);
                 sprite.body.velocity.y = 50 * (i % 2 === 0? 1 : -1)
@@ -24,4 +26,4 @@ var state = game.addState({
     }
 });
 
-game.load(['assets/logo.png'], state);
+game.load(['assets/bg.png', 'assets/brick.png'], state);
