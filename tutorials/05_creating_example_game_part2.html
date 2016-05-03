@@ -15,6 +15,7 @@
     <header>
         <a href="/" class="brand">mini<span>2d</span></a>
         <nav>
+            <a target="_blank" href="/lib/mini2d/mini2d.js">Download</a>
             <a href="/tutorials.html">Tutorials</a>
             <a href="/examples.html">Examples</a>
             <a href="/docs/modules/mini2d.html">Documentation</a>
@@ -24,10 +25,10 @@
         <article class="markdown">
             <a href="/tutorials.html">< Back to tutorials</a>
             <h1>Creating the example game - part 2</h1>
-            <p>In the previous part we created the menu state and now is time for us to finish the game and write the gameState, where the actual fun is going to happen.</p>
+            <p>In the previous part we created the menu state and now it is time for us to finish the game and write the gameState game state.</p>
 
             <h2>Creating the gameState</h2>
-            <p>Once again, we begin by calling the addState function. This time, however, specifying both the <em>init</em> and <em>update</em> function.</p>
+            <p>Once again, we begin by calling the addState function. This time, however, specifying both the init and update function.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -43,13 +44,13 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>That should already feel familiar from the previous chapter, so let us proceed!</p>
+            <p>That should already feel familiar from the previous chapter, so let's proceed!</p>
 
             <h2>The init function</h2>
-            <p>Most of the code is to be in the init function, the engine will automatically take care of most of the tasks we need, so the <em>update</em> function will be pretty straight forward, but more on that later, let's now deal with the init function.</p>
+            <p>Most of the code is going to be in the init function, the engine will automatically take care of most of the tasks we need. The update function will be pretty straight forward, but more on that later, lets finish the init function first.</p>
 
             <h3>Adding the paddles</h3>
-            <p>We beggin by adding the paddles. This is almost identical code twice, with the exception of the position of the paddles.</p>
+            <p>We begin by adding the paddles. This is almost identical code two times over, with the exception of the position of the paddles.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -67,13 +68,13 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>Each paddle is represented by a sprite, which is simply created with the <em>addSprite</em> function. The arguments specify it's position and texture file.</p>
-            <p>Because we want to take advantage of the built in physics system of mini2d.js, we have to call the <em>enableBody</em> method on both of these sprites. This will create a body based on the sprite properties.</p>
-            <p>The next thing we are going to want to do, is call the <em>collideWorldBounds</em> method, which will ensure, that the paddles will remain inside the screen.</p>
-            <p>Last, but not least, we set the <em>immovable</em> property to true, this will cause the physics engine not move the sprites on impact.</p>
+            <p>Each paddle is represented by a sprite, which is simply created with the addSprite function. The arguments specify its position and a texture file.</p>
+            <p>Because we want to take advantage of the built in physics system of mini2d.js, we have to call the enableBody method on both of these sprites. This will create a body based on the sprite's properties.</p>
+            <p>The next thing we are going to want to do, is to call the collideWorldBounds method, which will ensure, that the paddles remain inside the game bounds.</p>
+            <p>Last, but not least, we set the immovable property to true, this will cause the physics engine not to translate the sprite on impact.</p>
 
             <h3>Adding the ball</h3>
-            <p>Now that we created ourselves a pair of paddles, we need a ball for our pong game, so let's create it.</p>
+            <p>Now that we created a pair of paddles, we need a ball for our pong game, so let's create it.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -103,8 +104,8 @@
             <p>This introduces a few more methods and properties. The velocity property simply tells the physics engine to move the ball accordingly every frame.
               <br>The bounce property means how much will the velocity be reduced upon impact (0 being nullifying the velocity, 1 having no impact on velocity).
             </p>
-            <p>Then we have familiar method <em>collideWorldBounds</em>. This time it has arguments though. The argument is a callback function to be called upon impact, supplying a direction parameter in the form of string, which specifies what side of the world did the body collide with.</p>
-            <p>The world collision callback then modifies properties we haven't declared yet. So let's fix that.</p>
+            <p>Then we have a familiar method collideWorldBounds. This time it has arguments though. The argument is a callback function to be called upon impact, which supplies a direction parameter in the form of string, which specifies what side of the world did the body collide with.</p>
+            <p>The world collision callback then modifies score properties we haven't declared yet. So let's fix that.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -117,19 +118,19 @@
 <!-- HTML generated using hilite.me -->
 
             <p>The first two lines are just a variable for us to store the score.</p>
-            <p>The two following lines take advantage of the <em>Text</em> class, to create a score counter on the top of the screen.</p>
-            <p>The <em>addText</em> method should feel familiar, because we did something similar when adding text to the button. The only difference here being, the first two arguments specify the text's position, which was unnecessary for the button, because we wanted the text to be centered, which is handled automatically by the mini2d.js game engine.</p>
+            <p>The two following lines take advantage of the Text class, to create a score counter on the top of the screen.</p>
+            <p>The addText method should feel familiar, because we did something similar when adding text to the button. The only difference here is that the first two arguments specify the text's position, which was unnecessary for the button, because we wanted the text to be centered, which is handled automatically by the mini2d.js game engine.</p>
 
             <h2>The update method</h2>
             <p>Now that we have the init method ready for our game, it is time to write the update method as well.</p>
             <p>In this method there are two things that we want to do.</p>
             <ul>
-              <li>Position the paddles according to the mouse position.</li>
+              <li>Position the paddles according to the current position of the mouse.</li>
               <li>Make the ball collide with the paddles.</li>
             </ul>
 
             <h3>Positioning the paddles</h3>
-            <p>So first things first, let's position 'em.'</p>
+            <p>So first things first, let's position them.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -153,7 +154,8 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>And just like that we achieved the very thing we desired to achieve, this concludes our tutorial and you should now understand how the Pong example works.</p>
+            <p>And just like that we achieved the very thing we desired to achieve.</p>
+            <p>This concludes our tutorial and you should now understand how the Pong example works.</p>
         </article>
     </div>
 

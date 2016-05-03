@@ -15,6 +15,7 @@
     <header>
         <a href="/" class="brand">mini<span>2d</span></a>
         <nav>
+            <a target="_blank" href="/lib/mini2d/mini2d.js">Download</a>
             <a href="/tutorials.html">Tutorials</a>
             <a href="/examples.html">Examples</a>
             <a href="/docs/modules/mini2d.html">Documentation</a>
@@ -24,12 +25,13 @@
         <article class="markdown">
             <a href="/tutorials.html">< Back to tutorials</a>
             <h1>Creating the example game - part 1</h1>
-            <p>Now that we got yourself everything up and running, it's time to finally write a game using the mini2d.js engine!</p>
+            <p>Now that we have everything up and running, it's time to finally write a game using the mini2d.js engine!</p>
+            <p>We are going to try to reproduce the pong example, which can be found in the examples section.</p>
             <p>So without further ado, let's get to it!</p>
 
             <h2>Creating a game instance</h2>
             <p><i>All the following code is meant to be inside the window onload fuction.</i></p>
-            <p>Let's beggin by creating the game instance.</p>
+            <p>Let's begin by creating the game instance.</p>
 
 
 <!-- HTML generated using hilite.me -->
@@ -39,7 +41,7 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>The next thing we are going to want to create is a game state</p>
+            <p>The next thing we are going to want to create is a game state.</p>
 
             <h2>The menu state</h2>
             <p>We will begin with the menu state game state. The code is fairly simple.</p>
@@ -57,12 +59,12 @@
 <!-- HTML generated using hilite.me -->
 
 
-            <p>We use the created game instance to call the addState function. This function takes an object with two function properties <em>init</em> and <em>update</em>.</p>
-            <p>The init function server the purpose of initializing the state. This means this is the place where we are going to create the button to start the game.</p>
-            <p>Please note that init and update properties are optional, and because we have no use for the update function here, we are going to omit it.</p>
+            <p>We use the previously declared game variable to call the addState function. This function takes an object with two function properties init and update as arguments.</p>
+            <p>The init function serves the purpose of initializing the state. This means that this is the place where we are going to create the button to start the game.</p>
+            <p>Please note that init and update properties are optional. Because we have no use for the update function here, we are going to omit it.</p>
 
             <h3>Adding init code</h3>
-            <p>We are now goin to proceed with adding some code to the <em>init</em> function to create the `start game` button.</p>
+            <p>We are now going to proceed with adding more code to the init function to create the `start game` button.</p>
 
 <!-- HTML generated using hilite.me -->
 <!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
@@ -73,31 +75,21 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>We use the this keyword to reference the current state and add call the <em>addButton</em> method.
-              <br>First specifying position of the button, then the callback function to be called upon the button click. Next arguments specify the default texture and the last one is the texture when button is pressed down.
+            <p>We use the this keyword to reference the current state and call the <em>addButton</em> method.
+              <br>This method first specifies the position of the button, then the callback function to be called upon the button click. Next arguments specify the default texture and the last one is the texture when the button is pressed down.
             </p>
-            <p>The <em>addButton</em> method returns a button element. We use this to chain the call and call the <em>addText</em> method, which adds the text to the button.</p>
+            <p>The addButton method returns a button element. We use this to chain the call and call the addText method, which adds the text to the button.</p>
 
-            <h3>Centering the button on the screen</h3>
-            <p>Because the start button is the only element on the page we are going to want to center it. We could not specify this during the creation of the button, because the dimensions of the button weren't known.</p>
-
-<!-- HTML generated using hilite.me -->
-<!-- vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv -->
-<div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">btn</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">x</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">width</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">-</span> <span style="color: #a6e22e">btn</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">width</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-<span style="color: #a6e22e">btn</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">position</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">y</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">game</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">-</span> <span style="color: #a6e22e">btn</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">height</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-</pre></div>
-<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-<!-- HTML generated using hilite.me -->
 
             <h2>Starting the menu state</h2>
             <p>Please note that we haven't yet done two things.</p>
             <ol>
               <li>Load the textures for the button element.</li>
-              <li>Start the <em>menuState</em> game state.</li>
+              <li>Start the menuState game state.</li>
             </ol>
 
-            <p>Well, I'm pleased to announce to you that we can kill two birds with one stone! Methaphorically speaking of course
-              <br>We are going to use the <em>load</em> function.
+            <p>I'm pleased to announce to you that we can achieve this two things with a single method!
+              <br>We are going to use the load function.
             </p>
 
 <!-- HTML generated using hilite.me -->
@@ -107,11 +99,11 @@
 <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 <!-- HTML generated using hilite.me -->
 
-            <p>The function takes two arguments. First, an array of paths to the assets required to be loaded (we are going to use `paddle.png` later on). And an optional game state as a second one. This game state will be started when loading of the assets is finished.</p>
+            <p>The function takes two arguments. The first one is an array of paths to the assets to be loaded (we are going to use `paddle.png` later on) and an optional game state as the second one. This game state will be started when loading of the assets is finished.</p>
 
             <h2>Wrap up</h2>
-            <p>And that is all for the <em>menuState</em> ladies and gentlemen!</p>
-            <p>In the next part, we are going to create the more complex gameState.</p>
+            <p>And that is all for the menuState!</p>
+            <p>In the next part, we are going to create the other, more complex game state.</p>
             <a href="../tutorials/05_creating_example_game_part2.html">next chapter: Creating the example game - part 2 ></a>
         </article>
     </div>

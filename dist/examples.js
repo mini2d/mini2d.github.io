@@ -7,8 +7,8 @@ $(function () {
 var examples = {
   'Audio': ['music'],
   'Graphics': ['sprite_camera_button', 'debug'],
-  'Physics': ['physics', 'physics_bounce', 'physics_acceleration', 'physics_collision_movable', 'physics_collision_movable2', 'physics_collision_movable3'],
-  'Games': ['pong', 'breakout', 'doodlejump']
+  'Physics': ['physics_bounce', 'physics_acceleration', 'physics_collision_movable', 'physics_collision_movable_immovable'],
+  'Games': ['pong', 'breakout']
 };
 
 var init = function init() {

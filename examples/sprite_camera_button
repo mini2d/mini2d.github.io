@@ -5,22 +5,22 @@ var state = game.addState({
 
         this.addSprite(100, 300, 'assets/tree.png');
         this.addSprite(700, 350, 'assets/ball.png');
-        this.addSprite(200, 250, 'assets/mini2d-logo.png');
+        this.addSprite(200, 250, 'assets/brick.png');
 
         var self = this;
         this.addButton(50, 100, function () {
-            self.camera.move(-20, 0);
+            self.camera.move(20, 0);
         }, 'assets/btn.png', 'assets/btn-active.png').addText('camera right', '15px sans-serif', '#fff');
         this.addButton(225, 100, function () {
-            self.camera.move(20, 0);
+            self.camera.move(-20, 0);
         }, 'assets/btn.png', 'assets/btn-active.png').addText('camera left', '15px sans-serif', '#fff');
         this.addButton(400, 100, function () {
-            self.camera.move(0, 20);
+            self.camera.move(0, -20);
         }, 'assets/btn.png', 'assets/btn-active.png').addText('camera top', '15px sans-serif', '#fff');
         this.addButton(575, 100, function () {
-            self.camera.move(0, -20);
+            self.camera.move(0, 20);
         }, 'assets/btn.png', 'assets/btn-active.png').addText('camera bottom', '15px sans-serif', '#fff');
     }
 });
 
-game.load(['assets/bg.png', 'assets/ball.png','assets/mini2d-logo.png', 'assets/tree.png', 'assets/btn.png', 'assets/btn-active.png'], state);
+game.load(['assets/bg.png', 'assets/ball.png','assets/brick.png', 'assets/tree.png', 'assets/btn.png', 'assets/btn-active.png'], state);
